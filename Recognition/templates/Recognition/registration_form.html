@@ -1,0 +1,21 @@
+{% extends 'Recognition/base.html' %}
+{% block body %}
+ <div class="container-fluid">
+    <div class="row">
+
+        <div class="col-lg-4"></div>
+        <div class="col-lg-4 text-center bg-light">
+             <h2>Register here.</h2>
+                    <form id="log"  method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                    {% include 'Recognition/user_form.html' %}
+
+                    <button type="submit">Register</button>
+                    </form>
+
+        </div>
+        <div class="col-lg-4"></div>
+
+    </div>
+ </div>
+{% endblock %}

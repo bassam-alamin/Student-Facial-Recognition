@@ -1,0 +1,23 @@
+ {% extends 'Recognition/base.html' %}
+{% block body %}
+    <div class="row p-0 m-0">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+    <h5>Add Lecturer</h5>
+        <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+            {% for field in form %}
+                <div class="m-3">
+                    {{ field }}
+                </div>
+            {% endfor %}
+        <div class="col-md-4">
+            <button type="submit" class="form-control  btn-success m-">Submit</button>
+        </div>
+        </form>
+    </div>
+
+    <div class="col-md-4"></div>
+    </div>
+
+ {% endblock %}

@@ -1,0 +1,52 @@
+ {% extends 'Recognition/base.html' %}
+{% block body %}
+
+ <h3>Egerton University Departments</h3>
+<div class="row m-0 p-0">
+    <div class="col-md-4"></div>
+    <div class="col-md-4"></div>
+
+    <div class="col-md-4">
+        <h6 class="text-center">Add Department</h6>
+        <form method="post" enctype="multipart/form-data" >
+            {% csrf_token %}
+            <div class="row">
+                {% for field in form %}
+                    <div class="col-md-6">
+                        {{ field }}
+                    </div>
+                {% endfor %}
+                <div class="col-md-3">
+                    <button type="submit" class="form-control">Add</button>
+                </div>
+        </div>
+
+    </form>
+
+
+    </div>
+</div>
+
+
+     <div class="col-md-4 mt-2">
+            <table class="table table-dark table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">number</th>
+                        <th scope="col">Department</th>
+                    </tr>
+                </thead>
+                {% for d in departments %}
+                <tbody>
+                    <tr>
+                        <td>{{ d.id }}</td>
+                        <td>{{ d.department_name }}</td>
+
+                    </tr>
+                </tbody>
+                {% endfor %}
+            </table>
+
+     </div>
+
+ {% endblock %}

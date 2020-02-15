@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome</title>
+    {% load static %}
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'Recognition/lib/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'Recognition/lib/font-awesome/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'Recognition/lib/animate/animate.min.css' %}">
+     <link rel="stylesheet" type="text/css" href="{% static 'Recognition/lib/ionicons/css/ionicons.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'Recognition/lib/owlcarousel/assets/owl.carousel.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'Recognition/lib/magnific-popup/magnific-popup.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'Recognition/lib/ionicons/css/ionicons.min.css' %}">
+     <link rel="stylesheet" type="text/css" href="{% static 'Recognition/css/style.css' %}">
+    <style>
+        a{text-decoration: none !important;}
+        body{padding:0; margin: 0;
+                   font-family: 'Roboto', sans-serif;
+font-family: 'Play', sans-serif;
+
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #555555">
+      <a class="navbar-brand" href="{% url 'Recognition:home' %}">Student Portal</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarsExample01">
+        <ul class="navbar-nav ml-auto my-2 my-lg-0">
+          <li class="nav-item active">
+            <a class="nav-link" href="{% url 'Recognition:home' %}">Home <span class="sr-only">(current)</span></a>
+          </li>
+{#        {% if request.user.is_admin%}#}
+{#                    <li class="nav-item">#}
+{#                            <a class="nav-link" href="http://127.0.0.1:8000/admin">admin</a>#}
+{#                    </li>#}
+{#        {% endif %}#}
+{#            {% if request.user.is_authenticated%}#}
+{#                {% if not request.user.is_admin %}#}
+                      <li class="nav-item">
+                        <a class="nav-link" href="{% url 'Recognition:lecturers' %}">Lecturers</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link " href="{% url 'Recognition:units' %}">Units</a>
+                      </li>
+                     <li class="nav-item">
+                        <a class="nav-link " href="{% url 'Recognition:department'%}">Departments</a>
+                    </li>
+{#                    {% endif %}#}
+                  <li class="nav-item">
+                    <a class="nav-link " href="{% url 'Recognition:logout' %}">Logout</a>
+                  </li>
+{#            {% else %}#}
+                     <li class="nav-item">
+                            <a class="nav-link " href="{% url 'Recognition:login' %}">Login</a>
+                     </li>
+                     <li class="nav-item">
+                            <a class="nav-link " href="{% url 'Recognition:register' %}">Register</a>
+                     </li>
+{#            {% endif %}#}
+
+        </ul>
+
+      </div>
+    </nav>
+
+
+{% block body %}
+{% endblock %}
+
+</body>
+{% comment %}
+<script>window.jQuery || document.write('<script src={% static 'booking/assets/js/vendor/jquery-slim.min.js' %}><\/script>')</script>
+{% endcomment %}
+
+<script src = {% static 'Recognition/lib/jquery/jquery.min.js' %}></script>
+<script src = {% static 'Recognition/lib/jquery/jquery-migrate.min.js' %}></script>
+<script src = {% static 'Recognition/lib/bootstrap/js/bootstrap.bundle.min.js' %}></script>
+<script src = {% static 'Recognition/lib/easing/easing.min.js' %}></script>
+<script src = {% static 'Recognition/lib/superfish/hoverIntent.js' %}></script>
+<script src = {% static 'Recognition/lib/superfish/superfish.min.js' %}></script>
+<script src = {% static 'Recognition/lib/wow/wow.min.js' %}></script>
+<script src = {% static 'Recognition/lib/owlcarousel/owl.carousel.min.js' %}></script>
+<script src = {% static 'Recognition/lib/magnific-popup/magnific-popup.min.js' %}></script>
+<script src = {% static 'Recognition/lib/sticky/sticky.js' %}></script>
+<script src = {% static 'Recognition/js/main.js' %}></script>
+
+</html>

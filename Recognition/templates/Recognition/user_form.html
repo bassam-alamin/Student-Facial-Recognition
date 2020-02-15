@@ -1,0 +1,10 @@
+{% for field in form %}
+        <div class="form-group">
+            {% if field.html_name == 'password' or field.html_name == 'password_confirm' %}
+                <label for ="{{ field.id_for_label }}" class="label" style="padding: 0;margin: 0;">{{ field.html_name}}</label>
+            {% endif %}
+                <div style="padding: 0;margin: 0;" >{{ field }}</div>
+                <p class="text-success">{{ field.help_text }}</p>
+        </div>
+    <p class="">{{ field.errors }}</p>
+{% endfor %}

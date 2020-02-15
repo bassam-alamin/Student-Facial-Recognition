@@ -1,0 +1,41 @@
+ {% extends 'Recognition/base.html' %}
+{% block body %}
+
+
+    <h1>Welcomme to Lecturers</h1>
+
+    <div class="row p-0 m-0">
+        <div class="col-md-4"></div>
+        <div class="col-md-6"></div>
+        <div class="col-md-2">
+            <a href="{% url 'recognition:lecturer-add' %}" class="form-control btn-success">Add Lecturer</a>
+        </div>
+
+    </div>
+     <div class="col-md-8 mt-2">
+            <table class="table table-dark table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Department</th>
+                        <th scope="col">phone-no</th>
+                        <th scope="col">Id Number</th>
+
+
+                    </tr>
+                </thead>
+                {% for l in lecturers %}
+                <tbody>
+                    <tr>
+                        <td>{{ l.lecturer_name.first_name }}</td>
+                        <td>{{ l.department }}</td>
+                        <td>{{ l.phone_no }}</td>
+                        <td>{{ l.id_no }}</td>
+
+                    </tr>
+                </tbody>
+                {% endfor %}
+            </table>
+
+     </div>
+ {% endblock %}
