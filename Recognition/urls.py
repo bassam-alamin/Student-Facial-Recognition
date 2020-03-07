@@ -6,6 +6,13 @@ app_name = 'Recognition'
 urlpatterns = [
     # home url
     url(r'^$', views.Home.as_view(), name="home"),
+
+    # department url
+    url(r'^student/$', views.AddStudent.as_view(), name="student-add"),
+
+    # department url
+    url(r'^recognize/$', views.RecognizeStudent.as_view(), name="recognize-student"),
+
     # department url
     url(r'^departments/$', views.Department.as_view(), name="department"),
 

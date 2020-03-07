@@ -1,7 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f1ef2d00-5718-46d5-8618-71b0a2e94004" name="Default Changelist" comment="" />
+    <list default="true" id="f1ef2d00-5718-46d5-8618-71b0a2e94004" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Recognition/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Recognition/migrations/0002_auto_20200305_0044.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Recognition/static/Recognition/face-api.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Recognition/static/Recognition/models/face_expression_model-shard1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Recognition/static/Recognition/models/face_expression_model-weights_manifest.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Recognition/static/Recognition/models/face_landmark_68_model-shard1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Recognition/static/Recognition/models/face_landmark_68_model-weights_manifest.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Recognition/static/Recognition/models/face_landmark_68_tiny_model-shard1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Recognition/static/Recognition/models/face_landmark_68_tiny_model-weights_manifest.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Recognition/static/Recognition/models/face_recognition_model-shard1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Recognition/static/Recognition/models/face_recognition_model-shard2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Recognition/static/Recognition/models/face_recognition_model-weights_manifest.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Recognition/static/Recognition/models/tiny_face_detector_model-shard1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Recognition/static/Recognition/models/tiny_face_detector_model-weights_manifest.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Recognition/static/Recognition/script.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Recognition/templates/Recognition/recognize.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/faces/332F7EB4-70E6-47E3-92C5-C76AAF7B47CA.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/faces/bassam4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/faces/image.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/faces/mayow1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/faces/mayow2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/faces/mayow3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/bassam6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/bassam6_T9DOMCM.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/bassam7.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Recognition/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/Recognition/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Recognition/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Recognition/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Recognition/templates/Recognition/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/Recognition/templates/Recognition/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Recognition/templates/Recognition/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/Recognition/templates/Recognition/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Recognition/templates/Recognition/lecturers.html" beforeDir="false" afterPath="$PROJECT_DIR$/Recognition/templates/Recognition/lecturers.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Recognition/templates/Recognition/student_add.html" beforeDir="false" afterPath="$PROJECT_DIR$/Recognition/templates/Recognition/student_add.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Recognition/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Recognition/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Recognition/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Recognition/views.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,11 +55,16 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1XUJYmjzV1fzaB9QUeNlzNvyQd5" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../past projects/counselling" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Face Recognition Model" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -86,10 +127,41 @@
       <workItem from="1581419443829" duration="13953000" />
       <workItem from="1581449810036" duration="947000" />
       <workItem from="1581510136360" duration="1152000" />
+      <workItem from="1582277741704" duration="1717000" />
+      <workItem from="1582283611912" duration="2877000" />
+      <workItem from="1582395286517" duration="695000" />
+      <workItem from="1582446992245" duration="648000" />
+      <workItem from="1582555074747" duration="615000" />
+      <workItem from="1582621683029" duration="20342000" />
+      <workItem from="1582702654160" duration="3238000" />
+      <workItem from="1582719837771" duration="260000" />
+      <workItem from="1582728025336" duration="2476000" />
+      <workItem from="1582793259944" duration="2681000" />
+      <workItem from="1582813526853" duration="6642000" />
+      <workItem from="1583151830587" duration="32000" />
+      <workItem from="1583151995197" duration="2905000" />
+      <workItem from="1583227422434" duration="1205000" />
+      <workItem from="1583353317026" duration="5674000" />
+      <workItem from="1583395494091" duration="5124000" />
+      <workItem from="1583406460536" duration="5288000" />
+      <workItem from="1583575007312" duration="7845000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

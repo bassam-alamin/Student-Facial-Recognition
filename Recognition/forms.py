@@ -1,6 +1,10 @@
+import os
+
 from django import forms
 from django.utils import timezone
 import datetime,calendar
+
+from Students import settings
 from .models import *
 from django.contrib.auth import get_user_model
 from django.core.exceptions import ValidationError
@@ -35,19 +39,37 @@ class LecturerForm(forms.ModelForm):
 
     class Meta:
         model = Lecturer
-        fields = ['lecturer_name','department','phone_no','id_no']
+        fields = ['lecturer_name',"staff_no"]
         widgets = {
             'lecturer_name': forms.Select(attrs={'class':'form-control','placeholder':'Unit title ...'}),
-            'department': forms.Select(attrs={'class': 'form-control ', 'placeholder': 'i.e Comp420 ...'}),
-            'phone_no': forms.TextInput(attrs={'class': 'form-control ','placeholder':'Phone No....'}),
-            'id_no': forms.DateInput(format='%m/%d/%y',
-                                    attrs={'class': 'form-control', 'placeholder': 'select a date', 'type': 'date'}),
-
-
+            'staff_no': forms.TextInput(attrs={'class': 'form-control ','placeholder':'Staff No....'}),
 
         }
 
 
+class StudentAddForm(forms.ModelForm):
+
+    class Meta:
+        model = Students
+        fields = ["student_name","reg_no","image"]
+
+        widgets = {
+            "student_name":forms.Select(attrs={'class':'form-control'}),
+            "reg_no":forms.TextInput(attrs={'class':'form-control','placeholder':'Assign reg_no ...'}),
+            "image": forms.FileInput(attrs={'class': 'form-control'}),
+        }
+
+    # def clean_image(self):
+
+
+
+        # img = self.cleaned_data['image']
+        # cv_image = cv2.imread(img)
+        # print(type(cv_image))
+
+        # print(type(img))
+
+        # return img
 
 
 
@@ -75,12 +97,16 @@ class UserForm(forms.ModelForm):
 
     class Meta:
         model = User
-        fields = ['first_name', 'last_name', 'username', 'email', 'password']
+        fields = ['first_name', 'last_name', 'username', 'email','phone_no','id_no','department' ,'password']
         widgets = {
             'first_name': forms.TextInput(attrs={'class': 'form-control pt-0 mt-0','placeholder': 'First Name'}),
             'last_name': forms.TextInput(attrs={'class': 'form-control pt-0 mt-0','placeholder': 'Second Name'}),
-            'username': forms.TextInput(attrs={'class': 'form-control pt-0 mt-0','placeholder': 'Username'}),
+            'username': forms.TextInput(attrs={'class': 'form-control pt-0 mt-0','placeholder': 'Index Number'}),
             'email':forms.TextInput(attrs={'class': 'form-control pt-0 mt-0','placeholder': 'email'}),
+            'phone_no': forms.TextInput(attrs={'class': 'form-control pt-0 mt-0', 'placeholder': 'Phone no'}),
+            'id_no': forms.TextInput(attrs={'class': 'form-control pt-0 mt-0', 'placeholder': 'ID No...'}),
+            'department': forms.Select(attrs={'class': 'form-control pt-0 mt-0', 'placeholder': 'email'}),
+
         }
     def clean_first_name(self):
         first_name = self.cleaned_data['first_name']
