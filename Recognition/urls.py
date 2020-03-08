@@ -16,6 +16,10 @@ urlpatterns = [
     # department url
     url(r'^departments/$', views.Department.as_view(), name="department"),
 
+    # department url
+    url(r'^unit_booking/$', views.UnitBooking.as_view(), name="unit-booking"),
+
+
     # units url
     url(r'^units/$', views.UnitsView.as_view(), name="units"),
 

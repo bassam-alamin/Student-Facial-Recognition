@@ -5,7 +5,7 @@ import dlib
 from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
-from django.views.generic import View, CreateView
+from django.views.generic import View, CreateView, ListView
 from .forms import *
 import numpy as np
 import cv2
@@ -131,13 +131,14 @@ def _grab_image(path=None, stream=None, url=None):
         # if the stream is not None, then the image has been uploaded
         elif stream is not None:
             data = stream.read()
-        # convert the image to a NumPy array and then read it into
-        # OpenCV format
+            # convert the image to a NumPy array and then read it into
+            # OpenCV format
             image = np.asarray(bytearray(data), dtype="uint8")
             image = cv2.imdecode(image, cv2.IMREAD_COLOR)
 
-    # return the image
+            # return the image
             return image
+
 
 #
 # image1 = "/home/bassam/Desktop/projects/Face Recognition Model/images/mayow5.jpg"
@@ -172,12 +173,12 @@ class RecognizeStudent(View):
     def get(self, request):
         return render(request, self.template_name)
 
-    def post(self,request):
+    def post(self, request):
         image1 = request.FILES["image"]
         image = _grab_image(stream=request.FILES["image"])
 
         # image = request.FILES["image"].read()
-        image = cv2.imwrite("/home/bassam/Desktop/projects/Students/faces/{}".format(image1),image)
+        image = cv2.imwrite("/home/bassam/Desktop/projects/Students/faces/{}".format(image1), image)
         path = "/home/bassam/Desktop/projects/Students/faces/{}".format(image1)
         aligned = detect_face(path)
         cropped = crop_aligned(aligned)
@@ -185,12 +186,33 @@ class RecognizeStudent(View):
         students = Students.objects.all()
         for i in students:
             im1 = i.image_features
-            euclidean_distance(img_features,im1)
+            euclidean_distance(img_features, im1)
 
         print("we have posted")
         return redirect('recognition:recognize-student')
 
 
+class UnitBooking(View):
+    template_name = 'Recognition/bookUnits.html'
+    form_class = BookUnit
+
+    def get(self, request):
+        query = request.GET.get("plate_no")
+        result = Units.objects.all()
+        if query:
+            units = Units.objects.all()
+            result = units.filter(unit_code__icontains=query)
+            print(result)
+        return render(request, self.template_name, {'result': result})
+
+    def post(self,request):
+        user = request.user
+        unit_id = request.POST.get("unit_id")
+        student = Students.objects.get(student_name=user)
+        unit = Units.objects.get(pk = unit_id)
+        Bookings.objects.create(student=student,unit_booked_id=unit.id)
+
+        return redirect("recognition:unit-booking")
 
 
 class AddStudent(View):

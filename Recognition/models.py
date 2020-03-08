@@ -75,7 +75,7 @@ class Units(models.Model):
 class Bookings(models.Model):
     student = models.ForeignKey(Students, on_delete=models.CASCADE, related_name="student_bookings")
     unit_booked = models.ForeignKey(Units, on_delete=models.CASCADE)
-    is_attended = models.BooleanField()
+    is_attended = models.BooleanField(default=False)
 
     def __str__(self):
-        return self.unit_booked
+        return str(self.unit_booked)

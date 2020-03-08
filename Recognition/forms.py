@@ -46,6 +46,11 @@ class LecturerForm(forms.ModelForm):
 
         }
 
+class BookUnit(forms.ModelForm):
+
+    class Meta:
+        model = Bookings
+        fields = ["student","unit_booked"]
 
 class StudentAddForm(forms.ModelForm):
 

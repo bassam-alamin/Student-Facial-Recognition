@@ -2,41 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f1ef2d00-5718-46d5-8618-71b0a2e94004" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Recognition/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Recognition/migrations/0002_auto_20200305_0044.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Recognition/static/Recognition/face-api.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Recognition/static/Recognition/models/face_expression_model-shard1" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Recognition/static/Recognition/models/face_expression_model-weights_manifest.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Recognition/static/Recognition/models/face_landmark_68_model-shard1" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Recognition/static/Recognition/models/face_landmark_68_model-weights_manifest.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Recognition/static/Recognition/models/face_landmark_68_tiny_model-shard1" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Recognition/static/Recognition/models/face_landmark_68_tiny_model-weights_manifest.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Recognition/static/Recognition/models/face_recognition_model-shard1" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Recognition/static/Recognition/models/face_recognition_model-shard2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Recognition/static/Recognition/models/face_recognition_model-weights_manifest.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Recognition/static/Recognition/models/tiny_face_detector_model-shard1" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Recognition/static/Recognition/models/tiny_face_detector_model-weights_manifest.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Recognition/static/Recognition/script.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Recognition/templates/Recognition/recognize.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/faces/332F7EB4-70E6-47E3-92C5-C76AAF7B47CA.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/faces/bassam4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/faces/image.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/faces/mayow1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/faces/mayow2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/faces/mayow3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/bassam6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/bassam6_T9DOMCM.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/bassam7.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Recognition/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/Recognition/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Recognition/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Recognition/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Recognition/templates/Recognition/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/Recognition/templates/Recognition/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Recognition/templates/Recognition/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/Recognition/templates/Recognition/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Recognition/templates/Recognition/lecturers.html" beforeDir="false" afterPath="$PROJECT_DIR$/Recognition/templates/Recognition/lecturers.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Recognition/templates/Recognition/student_add.html" beforeDir="false" afterPath="$PROJECT_DIR$/Recognition/templates/Recognition/student_add.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Recognition/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Recognition/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Recognition/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Recognition/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/faces/332F7EB4-70E6-47E3-92C5-C76AAF7B47CA.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/faces/bassam4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/faces/image.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/faces/mayow1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/faces/mayow2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/faces/mayow3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/bassam6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/bassam6_T9DOMCM.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/bassam7.jpg" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -144,7 +125,8 @@
       <workItem from="1583353317026" duration="5674000" />
       <workItem from="1583395494091" duration="5124000" />
       <workItem from="1583406460536" duration="5288000" />
-      <workItem from="1583575007312" duration="7845000" />
+      <workItem from="1583575007312" duration="18426000" />
+      <workItem from="1583653827758" duration="894000" />
     </task>
     <servers />
   </component>
