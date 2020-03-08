@@ -3,11 +3,12 @@
 
 {% block body %}
 {% load static %}
+    {{ request.user }}
     <h1>Unit Bookings</h1>
     <form action="#" method="GET">
               <div class="row p-0 m-0">
                   <div class="col-md-4 col-xs-4">
-                        <input class="form-control" type="text" name="plate_no" value="{{ request.GET.plate_no }}">
+                        <input class="form-control" type="text" name="unit_name" value="{{ request.GET.plate_no }}">
                   </div>
                   <div class="col-md-4 col-xs-4">
                         <input class="form-control" type="submit" value="Search">
@@ -43,5 +44,28 @@
                 </tbody>
                 {% endfor %}
             </table>
+
+            {% if request.user.is_student == 1 %}
+                <h3>Units Booked</h3>
+                <table class="table table-dark table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">Units Booked</th>
+
+                    </tr>
+                </thead>
+                {% for u in units_booked %}
+                <tbody>
+                    <tr>
+                        <td>{{ u.unit_booked }}</td>
+                    </tr>
+                </tbody>
+                {% endfor %}
+            </table>
+
+
+            {% endif %}
+
+
 </div>
   {% endblock %}

@@ -167,6 +167,8 @@ class Home(View):
         return render(request, self.template_name)
 
 
+# ======================================Recognize Students ===============================================
+
 class RecognizeStudent(View):
     template_name = 'Recognition/recognize.html'
 
@@ -192,28 +194,45 @@ class RecognizeStudent(View):
         return redirect('recognition:recognize-student')
 
 
+# =======================================Unit Booking and viewing ======================================
+
 class UnitBooking(View):
     template_name = 'Recognition/bookUnits.html'
     form_class = BookUnit
 
     def get(self, request):
-        query = request.GET.get("plate_no")
+        query = request.GET.get("unit_name")
         result = Units.objects.all()
         if query:
             units = Units.objects.all()
             result = units.filter(unit_code__icontains=query)
             print(result)
-        return render(request, self.template_name, {'result': result})
-
-    def post(self,request):
+        units_booked = []
         user = request.user
+        try:
+            student = Students.objects.get(student_name=user)
+            print("student is", student)
+            units_booked = Bookings.objects.filter(student=student)
+            print(units_booked)
+        except:
+            return render(request, self.template_name, {'result': result, 'units_booked': units_booked})
+
+        return render(request, self.template_name, {'result': result, 'units_booked': units_booked})
+
+    def post(self, request):
+        user = request.user
+        print(user)
         unit_id = request.POST.get("unit_id")
         student = Students.objects.get(student_name=user)
-        unit = Units.objects.get(pk = unit_id)
-        Bookings.objects.create(student=student,unit_booked_id=unit.id)
+        print(student)
+
+        unit = Units.objects.get(pk=unit_id)
+        Bookings.objects.create(student=student, unit_booked_id=unit.id)
 
         return redirect("recognition:unit-booking")
 
+
+# ===============================Add students plus the face Features ==================================================
 
 class AddStudent(View):
     template_name = 'Recognition/student_add.html'
@@ -240,6 +259,8 @@ class AddStudent(View):
             return redirect('recognition:department')
 
 
+# =========================================add departments ===============================
+
 class Department(View):
     template_name = 'Recognition/department.html'
     model = Departments
@@ -258,6 +279,8 @@ class Department(View):
             return redirect('recognition:department')
 
 
+# ==============================View Units ===========================================================
+
 class UnitsView(View):
     template_name = 'Recognition/units.html'
     model = Units
@@ -266,6 +289,8 @@ class UnitsView(View):
         units = Units.objects.all()
         return render(request, self.template_name, {'units': units})
 
+
+# ==============================Add Units =======================================
 
 class UnitAdd(View):
     template_name = "Recognition/unit_add.html"
@@ -287,6 +312,8 @@ class UnitAdd(View):
             return redirect('recognition:units')
 
 
+# ==============================View Lecturers ==================================================
+
 class LecturersView(View):
     template_name = 'Recognition/lecturers.html'
     model = Lecturer
@@ -294,6 +321,9 @@ class LecturersView(View):
     def get(self, request):
         lecturers = Lecturer.objects.all()
         return render(request, self.template_name, {'lecturers': lecturers})
+
+
+# ==================================Add Lecturers ===================================================
 
 
 class LecturerAdd(View):
@@ -315,6 +345,8 @@ class LecturerAdd(View):
 
             return redirect('recognition:lecturers')
 
+
+# ======================================== User Registration ========================================================
 
 class UserFormView(View):
     form_class = UserForm
@@ -347,6 +379,8 @@ class UserFormView(View):
         return render(request, self.template_name, {'form': form})
 
 
+# ===================================User Login ===========================================================
+
 class LoginUser(View):
     template_name = 'Recognition/login.html'
     form_class = LoginForm
@@ -369,6 +403,8 @@ class LoginUser(View):
 
         return render(request, self.template_name, {'form': form})
 
+
+# ===================================User Login ======================================
 
 def logoutuser(request):
     logout(request)
