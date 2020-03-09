@@ -79,3 +79,9 @@ class Bookings(models.Model):
 
     def __str__(self):
         return str(self.unit_booked)
+
+class Recognizer(models.Model):
+    pic = models.FileField()
+
+    def __str__(self):
+        return str(self.pk)

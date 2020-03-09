@@ -146,3 +146,12 @@ class LoginForm(forms.ModelForm):
         widgets = {
             'username': forms.TextInput(attrs={'class': 'form-control'}),
         }
+
+class RecognizerForm(forms.ModelForm):
+
+    class Meta:
+        model = Recognizer
+        fields = ["pic"]
+        widgets = {
+            "pic": forms.FileInput(attrs={'class':'form-control'})
+        }

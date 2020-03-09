@@ -32,10 +32,11 @@
                         <td>{{ u.unit_code }}</td>
                         <td>{{ u.unit_lecturer }}</td>
                         <td>
+
                             <form method="post">
                                 {% csrf_token %}
                                 <input type="text" name="unit_id" value="{{ u.pk }}" hidden>
-                                <input type="submit" href="#" class="btn btn-sm btn-success" value="Book">
+                                <input type="submit" href="#" class="btn btn-sm btn-success" value="Book unit">
                             </form>
 
                         </td>

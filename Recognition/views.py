@@ -1,8 +1,9 @@
 import math
-import urllib
+import urllib.request
 
 import dlib
 from django.contrib.auth import authenticate, login, logout
+from django.core.exceptions import ObjectDoesNotExist
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.views.generic import View, CreateView, ListView
@@ -17,6 +18,8 @@ from skimage import exposure
 from imutils.face_utils import FaceAligner
 from imutils.face_utils import rect_to_bb
 import imutils
+import tkinter
+import matplotlib
 
 # Create your views here.
 # =======================================================Functions ====================================
@@ -51,9 +54,13 @@ def detect_face(path):
         (x, y, w, h) = rect_to_bb(face)
         faceOrig = imutils.resize(cropped[y:y + h, x:x + w], width=300)
         aligned = fa.align(cropped, gray, face)
-
+        cv2.imwrite("aligned.jpg", cropped)
         # plt.imshow(cropped)
         # plt.show()
+
+        # cv2.rectangle(cropped, (x1, y1), (x2, y2), (0, 255, 0), 3)
+        # ====================loads the aligned image but i just want the face to work on that======================#
+        # cropped = cv2.imread("/home/bassam/Desktop/projects/Face Recognition Model/aligned.jpg")
 
         return aligned
 
@@ -70,6 +77,7 @@ def crop_aligned(aligned):
 
 
 def draw_points(aligned):
+
     cropped = cv2.resize(aligned, (300, 300))
     gray = cv2.cvtColor(cropped, cv2.COLOR_BGR2GRAY)
 
@@ -85,7 +93,7 @@ def draw_points(aligned):
         # cv2.rectangle(cropped, (x1, y1), (x2, y2), (0, 255, 0), 3)
 
         # dope staff to make sure only face is projected
-        cropped = cropped[y1:y2, x1:x2]
+        # cropped = cropped[y1:y2,x1:x2]
 
         landmarks = predictor(cropped, face)
 
@@ -94,12 +102,12 @@ def draw_points(aligned):
             vec[i][0] = landmarks.part(i).x
             vec[i][1] = landmarks.part(i).y
             points.append(landmarks.part(i))
-            print(landmarks.part(i))
+            # print(landmarks.part(i))
 
             cv2.circle(cropped, (vec[i][0], vec[i][1]), 1, (255, 0, 0), -1)
-            plt.imshow(cv2.circle(cropped, (vec[i][0], vec[i][1]), 1, (255, 0, 0), -1), cmap="gray")
-        plt.show()
-        print(tuple(vec))
+            # plt.imshow(cv2.circle(cropped, (vec[i][0], vec[i][1]), 1, (255, 0, 0), -1),cmap="gray")
+        # plt.show()
+        # print(vec)
 
     return vec
 
@@ -111,9 +119,9 @@ def euclidean_distance(vec1, vec2):
         y = vec2[i]
         distance = math.sqrt(sum([(a - b) ** 2 for a, b in zip(x, y)]))
         total = total + distance
-        print("Euclidean distance from {} and {}:{} ".format(x, y, distance))
+        # print("Euclidean distance from {} and {}:{} ".format(x, y, distance))
 
-    print(total)
+    # print(total)
 
     return total
 
@@ -126,7 +134,7 @@ def _grab_image(path=None, stream=None, url=None):
     else:
         # if the URL is not None, then download the image
         if url is not None:
-            resp = urllib.urlopen(url)
+            resp = urllib.request.urlopen(url)
             data = resp.read()
         # if the stream is not None, then the image has been uploaded
         elif stream is not None:
@@ -171,26 +179,31 @@ class Home(View):
 
 class RecognizeStudent(View):
     template_name = 'Recognition/recognize.html'
+    form_class = RecognizerForm
 
     def get(self, request):
-        return render(request, self.template_name)
+        return render(request, self.template_name,{'form':self.form_class})
 
     def post(self, request):
-        image1 = request.FILES["image"]
-        image = _grab_image(stream=request.FILES["image"])
+        form = self.form_class(request.POST, request.FILES)
 
-        # image = request.FILES["image"].read()
-        image = cv2.imwrite("/home/bassam/Desktop/projects/Students/faces/{}".format(image1), image)
-        path = "/home/bassam/Desktop/projects/Students/faces/{}".format(image1)
+        student = form.save()
+        print(student.pic.path)
+
+        path = student.pic.path
+        print(path)
         aligned = detect_face(path)
         cropped = crop_aligned(aligned)
         img_features = draw_points(cropped)
         students = Students.objects.all()
+        distances = []
         for i in students:
             im1 = i.image_features
-            euclidean_distance(img_features, im1)
+            distance = euclidean_distance(img_features, im1)
+            distances.append(euclidean_distance(img_features, im1))
 
-        print("we have posted")
+
+        print(distances)
         return redirect('recognition:recognize-student')
 
 
@@ -214,7 +227,7 @@ class UnitBooking(View):
             print("student is", student)
             units_booked = Bookings.objects.filter(student=student)
             print(units_booked)
-        except:
+        except Students.DoesNotExist:
             return render(request, self.template_name, {'result': result, 'units_booked': units_booked})
 
         return render(request, self.template_name, {'result': result, 'units_booked': units_booked})
@@ -223,11 +236,14 @@ class UnitBooking(View):
         user = request.user
         print(user)
         unit_id = request.POST.get("unit_id")
-        student = Students.objects.get(student_name=user)
-        print(student)
 
-        unit = Units.objects.get(pk=unit_id)
-        Bookings.objects.create(student=student, unit_booked_id=unit.id)
+        try:
+            student = Students.objects.get(student_name=user)
+            print(student)
+            unit = Units.objects.get(pk=unit_id)
+            Bookings.objects.create(student=student, unit_booked_id=unit.id)
+        except ObjectDoesNotExist:
+            return redirect("recognition:unit-booking")
 
         return redirect("recognition:unit-booking")
 
@@ -244,13 +260,18 @@ class AddStudent(View):
 
     def post(self, request):
         form = self.form_class(request.POST, request.FILES)
+        image = _grab_image(stream=request.FILES["image"])
+        image1 = request.FILES["image"]
+
 
         if form.is_valid():
             student = form.save()
             print(student.image.path)
 
-            img = student.image.path
-            aligned = detect_face(img)
+            image = cv2.imwrite("/home/bassam/Desktop/projects/Students/faces/{}".format(image1), image)
+            path = student.image.path
+            print(path)
+            aligned = detect_face(path)
             cropped = crop_aligned(aligned)
             img_features = draw_points(cropped)
             student.image_features = img_features
