@@ -3,12 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="f1ef2d00-5718-46d5-8618-71b0a2e94004" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Recognition/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/Recognition/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Recognition/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/Recognition/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Recognition/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Recognition/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Recognition/templates/Recognition/bookUnits.html" beforeDir="false" afterPath="$PROJECT_DIR$/Recognition/templates/Recognition/bookUnits.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Recognition/templates/Recognition/recognize.html" beforeDir="false" afterPath="$PROJECT_DIR$/Recognition/templates/Recognition/recognize.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Recognition/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Recognition/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aligned.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/aligned.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -52,7 +48,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Face Recognition Model" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../past projects/counselling" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -134,7 +130,8 @@
       <workItem from="1583406460536" duration="5288000" />
       <workItem from="1583575007312" duration="18426000" />
       <workItem from="1583653827758" duration="5437000" />
-      <workItem from="1583742551565" duration="19777000" />
+      <workItem from="1583742551565" duration="20552000" />
+      <workItem from="1583831952050" duration="8574000" />
     </task>
     <servers />
   </component>

@@ -120,9 +120,7 @@ def euclidean_distance(vec1, vec2):
         distance = math.sqrt(sum([(a - b) ** 2 for a, b in zip(x, y)]))
         total = total + distance
         # print("Euclidean distance from {} and {}:{} ".format(x, y, distance))
-
     # print(total)
-
     return total
 
 
@@ -196,11 +194,29 @@ class RecognizeStudent(View):
         cropped = crop_aligned(aligned)
         img_features = draw_points(cropped)
         students = Students.objects.all()
-        distances = []
+        distances = {}
         for i in students:
             im1 = i.image_features
-            distance = euclidean_distance(img_features, im1)
-            distances.append(euclidean_distance(img_features, im1))
+            distance = float("{0:.2f}".format(euclidean_distance(img_features, im1) / 1000))
+            if distance < 0.25:
+                distances.update({i.id:distance})
+            all = {}
+            context = {
+                'students': all,
+            }
+            if len(distances) > 1:
+                for k, v in enumerate(distances):
+
+                    student = Students.objects.get(pk=v)
+
+                    all.update({student.student_name.username:student.image.url})
+                    print(distances)
+
+                return render(request,'Recognition/confirm_face.html',context)
+
+
+
+
 
 
         print(distances)

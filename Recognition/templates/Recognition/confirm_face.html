@@ -1,0 +1,15 @@
+
+ {% extends 'Recognition/base.html' %}
+
+{% block body %}
+{% load static %}
+<h1>We are about to confirm here</h1>
+    {% for i in students.items %}
+        <div class="col-md-4">
+        <img alt = "image" src="{{ i.1 }}"  style="transform:rotate(90deg); height: 100px; width: 100px;">
+        <h3>{{ i.0 }}</h3>
+        </div>
+
+    {% endfor %}
+
+ {% endblock %}
