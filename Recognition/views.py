@@ -1,5 +1,6 @@
 import math
 import urllib.request
+from django.contrib import messages
 
 import dlib
 from django.contrib.auth import authenticate, login, logout
@@ -77,9 +78,10 @@ def crop_aligned(aligned):
 
 
 def draw_points(aligned):
-
     cropped = cv2.resize(aligned, (300, 300))
     gray = cv2.cvtColor(cropped, cv2.COLOR_BGR2GRAY)
+    gray = cv2.equalizeHist(gray)
+
 
     faces = detector(gray)
     points = []
@@ -95,7 +97,7 @@ def draw_points(aligned):
         # dope staff to make sure only face is projected
         # cropped = cropped[y1:y2,x1:x2]
 
-        landmarks = predictor(cropped, face)
+        landmarks = predictor(gray, face)
 
         vec = np.empty([68, 2], dtype=int)
         for i in range(0, 68):
@@ -180,7 +182,7 @@ class RecognizeStudent(View):
     form_class = RecognizerForm
 
     def get(self, request):
-        return render(request, self.template_name,{'form':self.form_class})
+        return render(request, self.template_name, {'form': self.form_class})
 
     def post(self, request):
         form = self.form_class(request.POST, request.FILES)
@@ -197,29 +199,36 @@ class RecognizeStudent(View):
         distances = {}
         for i in students:
             im1 = i.image_features
+            print(euclidean_distance(img_features, im1))
             distance = float("{0:.2f}".format(euclidean_distance(img_features, im1) / 1000))
             if distance < 0.25:
-                distances.update({i.id:distance})
-            all = {}
-            context = {
-                'students': all,
-            }
-            if len(distances) > 1:
-                for k, v in enumerate(distances):
+                distances.update({i.id: distance})
+        all = {}
+        context = {
+            'students': all,
+        }
+        if len(distances) > 0:
+            for k, v in enumerate(distances):
+                student = Students.objects.get(pk=v)
 
-                    student = Students.objects.get(pk=v)
+                all.update({student.student_name.username: student.image.url})
+                print(distances)
 
-                    all.update({student.student_name.username:student.image.url})
-                    print(distances)
+            return render(request, 'Recognition/confirm_face.html', context)
 
-                return render(request,'Recognition/confirm_face.html',context)
-
-
-
-
-
+        else:
+            messages.success(request, "No such student")
 
         print(distances)
+        return redirect('recognition:recognize-student')
+
+
+# ======================================FAce Confirming =============================================
+class Confirm(View):
+
+    def post(self, request, pk):
+        student_id = pk
+
         return redirect('recognition:recognize-student')
 
 
@@ -278,7 +287,6 @@ class AddStudent(View):
         form = self.form_class(request.POST, request.FILES)
         image = _grab_image(stream=request.FILES["image"])
         image1 = request.FILES["image"]
-
 
         if form.is_valid():
             student = form.save()

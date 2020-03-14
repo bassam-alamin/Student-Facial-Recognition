@@ -10,8 +10,13 @@ urlpatterns = [
     # department url
     url(r'^student/$', views.AddStudent.as_view(), name="student-add"),
 
-    # department url
+    # recognize url
     url(r'^recognize/$', views.RecognizeStudent.as_view(), name="recognize-student"),
+
+    # confirm face
+    url(r'^recognize/confirm/(?P<pk>[0-9]+)/$', views.Confirm.as_view(), name="confirm-student"),
+
+
 
     # department url
     url(r'^departments/$', views.Department.as_view(), name="department"),
