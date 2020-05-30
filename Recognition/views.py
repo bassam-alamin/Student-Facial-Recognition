@@ -24,107 +24,29 @@ import matplotlib
 
 # Create your views here.
 # =======================================================Functions ====================================
-
-detector = dlib.get_frontal_face_detector()
-predictor = dlib.shape_predictor(
-    "/home/bassam/Desktop/projects/Face Recognition Model/shape_predictor_68_face_landmarks.dat")
-
-fa = FaceAligner(predictor, desiredFaceWidth=300)
+# Models Loaded
+face_detector = dlib.get_frontal_face_detector()
+pose_predictor_68_point = dlib.shape_predictor('/home/bassam/Desktop/projects/Student-Facial-Recognition/shape_predictor_68_face_landmarks.dat')
+face_encoder = dlib.face_recognition_model_v1('/home/bassam/Desktop/projects/Student-Facial-Recognition/dlib_face_recognition_resnet_model_v1.dat')
 
 
-def detect_face(path):
-    img = cv2.imread(path)
-
-    faces = detector(img)
-    crop = img
-    # for i, d in enumerate(faces):
-    #     crop = img[d.top():d.bottom(), d.left():d.right()]
-    cropped = cv2.resize(crop, (300, 300))
-    gray = cv2.cvtColor(cropped, cv2.COLOR_BGR2GRAY)
-    # gray = cropped
-
-    faces = detector(gray)
-    points = []
-
-    for face in faces:
-        x1 = face.left()
-        y1 = face.top()
-        x2 = face.right()
-        y2 = face.bottom()
-
-        (x, y, w, h) = rect_to_bb(face)
-        faceOrig = imutils.resize(cropped[y:y + h, x:x + w], width=300)
-        aligned = fa.align(cropped, gray, face)
-        cv2.imwrite("aligned.jpg", cropped)
-        # plt.imshow(cropped)
-        # plt.show()
-
-        # cv2.rectangle(cropped, (x1, y1), (x2, y2), (0, 255, 0), 3)
-        # ====================loads the aligned image but i just want the face to work on that======================#
-        # cropped = cv2.imread("/home/bassam/Desktop/projects/Face Recognition Model/aligned.jpg")
-
-        return aligned
+def whirldata_face_detectors(img, number_of_times_to_upsample=1):
+    return face_detector(img, number_of_times_to_upsample)
 
 
-def crop_aligned(aligned):
-    cropped = aligned
-    faces = detector(aligned)
-    for i, d in enumerate(faces):
-        cropped = cropped[d.top():d.bottom(), d.left():d.right()]
+def whirldata_face_encodings(face_image, num_jitters=1):
+    face_locations = whirldata_face_detectors(face_image)
+    pose_predictor = pose_predictor_68_point
+    predictors = [pose_predictor(face_image, face_location) for face_location in face_locations]
+    return \
+        [np.array(face_encoder.compute_face_descriptor(face_image, predictor, num_jitters)) for predictor in
+         predictors][0]
 
-        # plt.imshow(cropped)
-        # plt.show()
-    return cropped
-
-
-def draw_points(aligned):
-    cropped = cv2.resize(aligned, (300, 300))
-    gray = cv2.cvtColor(cropped, cv2.COLOR_BGR2GRAY)
-    gray = cv2.equalizeHist(gray)
-
-
-    faces = detector(gray)
-    points = []
-    vec = []
-    for face in faces:
-        x1 = face.left()
-        y1 = face.top()
-        x2 = face.right()
-        y2 = face.bottom()
-
-        # cv2.rectangle(cropped, (x1, y1), (x2, y2), (0, 255, 0), 3)
-
-        # dope staff to make sure only face is projected
-        # cropped = cropped[y1:y2,x1:x2]
-
-        landmarks = predictor(gray, face)
-
-        vec = np.empty([68, 2], dtype=int)
-        for i in range(0, 68):
-            vec[i][0] = landmarks.part(i).x
-            vec[i][1] = landmarks.part(i).y
-            points.append(landmarks.part(i))
-            # print(landmarks.part(i))
-
-            cv2.circle(cropped, (vec[i][0], vec[i][1]), 1, (255, 0, 0), -1)
-            # plt.imshow(cv2.circle(cropped, (vec[i][0], vec[i][1]), 1, (255, 0, 0), -1),cmap="gray")
-        # plt.show()
-        # print(vec)
-
-    return vec
-
-
-def euclidean_distance(vec1, vec2):
-    total = 0
-    for i in range(17, 48):
-        x = vec1[i]
-        y = vec2[i]
-        distance = math.sqrt(sum([(a - b) ** 2 for a, b in zip(x, y)]))
-        total = total + distance
-        # print("Euclidean distance from {} and {}:{} ".format(x, y, distance))
-    # print(total)
-    return total
-
+def return_euclidean_distance(feature_1, feature_2):
+    feature_1 = np.array(feature_1)
+    feature_2 = np.array(feature_2)
+    dist = np.sqrt(np.sum(np.square(feature_1 - feature_2)))
+    return dist
 
 def _grab_image(path=None, stream=None, url=None):
     # if the path is not None, then load the image from disk
@@ -146,25 +68,6 @@ def _grab_image(path=None, stream=None, url=None):
 
             # return the image
             return image
-
-
-#
-# image1 = "/home/bassam/Desktop/projects/Face Recognition Model/images/mayow5.jpg"
-# image2 = "/home/bassam/Desktop/projects/Face Recognition Model/images/mayow4.jpg"
-#
-# aligned1 = detect_face(image1)
-# aligned2 = detect_face(image2)
-#
-# cropped1 = crop_aligned(aligned1)
-# cropped2 = crop_aligned(aligned2)
-#
-# vec1 = draw_points(cropped1)
-# vec2 = draw_points(cropped2)
-#
-# euclidean_distance(vec1, vec2)
-#
-# cv2.destroyAllWindows()
-
 
 # =======================================================endFunctions =================================
 
@@ -192,16 +95,15 @@ class RecognizeStudent(View):
 
         path = student.pic.path
         print(path)
-        aligned = detect_face(path)
-        cropped = crop_aligned(aligned)
-        img_features = draw_points(cropped)
+        unknown_image = cv2.imread(path)
+        enc1 = whirldata_face_encodings(unknown_image)
         students = Students.objects.all()
         distances = {}
         for i in students:
-            im1 = i.image_features
-            print(euclidean_distance(img_features, im1))
-            distance = float("{0:.2f}".format(euclidean_distance(img_features, im1) / 1000))
-            if distance < 0.25:
+            enc2 = i.image_features
+            distance = return_euclidean_distance(enc1, enc2)
+            print(distance)
+            if distance < 0.4700:
                 distances.update({i.id: distance})
         all = {}
         context = {
@@ -295,9 +197,9 @@ class AddStudent(View):
             image = cv2.imwrite("/home/bassam/Desktop/projects/Students/faces/{}".format(image1), image)
             path = student.image.path
             print(path)
-            aligned = detect_face(path)
-            cropped = crop_aligned(aligned)
-            img_features = draw_points(cropped)
+            known_image = cv2.imread(path)
+            enc1 = whirldata_face_encodings(known_image)
+            img_features = enc1
             student.image_features = img_features
             student.save()
 

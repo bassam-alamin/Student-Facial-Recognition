@@ -1,3 +1,4 @@
+from django.views.decorators.csrf import csrf_exempt
 from rest_framework import generics
 from .serializers import *
 from rest_framework.permissions import AllowAny
@@ -96,7 +97,7 @@ class BookingRudView(generics.RetrieveUpdateDestroyAPIView):
         return Bookings.objects.all()
 
 
-class DepartmentApiView(generics.ListAPIView):
+class DepartmentApiView(generics.ListCreateAPIView):
     lookup_field = "pk"
     serializer_class = DepartmentSerializer
     permission_classes = [AllowAny, ]
