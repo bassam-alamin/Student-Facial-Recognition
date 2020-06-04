@@ -3,10 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="f1ef2d00-5718-46d5-8618-71b0a2e94004" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Recognition/api/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Recognition/api/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Recognition/templates/Recognition/confirm_face.html" beforeDir="false" afterPath="$PROJECT_DIR$/Recognition/templates/Recognition/confirm_face.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Recognition/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Recognition/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aligned.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/aligned.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -143,7 +139,9 @@
       <workItem from="1590700482759" duration="424000" />
       <workItem from="1590746804793" duration="2469000" />
       <workItem from="1590767695136" duration="850000" />
-      <workItem from="1590833927355" duration="3162000" />
+      <workItem from="1590833927355" duration="5280000" />
+      <workItem from="1591111978265" duration="3262000" />
+      <workItem from="1591181540698" duration="600000" />
     </task>
     <servers />
   </component>
