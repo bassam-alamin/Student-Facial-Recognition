@@ -1,10 +1,11 @@
 from django.conf.urls import url
 from .views import *
-
+from rest_framework.authtoken import views
 app_name='Recognition'
 urlpatterns=[
     url(r'^users$',UserApiView.as_view(),name="users-api"),
     url(r'^user/(?P<pk>[0-9]+)$',UserRudApiView.as_view(),name="user-api"),
+    url(r'login/',views.obtain_auth_token,name='api-login'),
     url(r'^students/$',StudentApiView.as_view(),name="students-api"),
     url(r'^student/(?P<pk>[0-9]+)$', StudentRudView.as_view(), name="student-api"),
     url(r'^lecturers/$',LecturerApiView.as_view(),name="lecturers-api"),
