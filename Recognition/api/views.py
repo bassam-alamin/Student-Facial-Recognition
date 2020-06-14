@@ -3,8 +3,8 @@ from rest_framework import generics
 from .serializers import *
 from rest_framework.permissions import AllowAny
 
-class UserApiView(generics.ListCreateAPIView):
-    lookup_field = "pk"
+class UserApiView(generics.RetrieveUpdateDestroyAPIView):
+    lookup_field = "username"
     serializer_class = UserSerializer
     permission_classes = [AllowAny, ]
 
