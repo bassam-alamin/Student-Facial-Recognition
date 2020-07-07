@@ -1,7 +1,14 @@
+import base64
+
+
+import numpy as np
 from django.views.decorators.csrf import csrf_exempt
+from django.views.generic import View
 from rest_framework import generics
 from .serializers import *
 from rest_framework.permissions import AllowAny
+from Recognition.views import *
+
 
 class UserApiView(generics.RetrieveUpdateDestroyAPIView):
     lookup_field = "username"
@@ -15,6 +22,7 @@ class UserApiView(generics.RetrieveUpdateDestroyAPIView):
         instance = serializer.save()
         instance.set_password(instance.password)
         instance.save()
+
 
 class UserRudApiView(generics.RetrieveUpdateDestroyAPIView):
     lookup_field = "pk"
@@ -31,6 +39,22 @@ class StudentApiView(generics.ListAPIView):
     permission_classes = [AllowAny, ]
 
     def get_queryset(self):
+        return Students.objects.all()
+
+class StudentRecognizerView(generics.ListAPIView):
+    lookup_field = "imagestring"
+    serializer_class = StudentSerializer
+    permission_classes = [AllowAny, ]
+
+    def get_queryset(self):
+        imb64 = self.kwargs.get(self.lookup_field)
+        im_bytes = base64.b64decode(imb64)
+        im_arr = np.frombuffer(im_bytes, dtype=np.uint8)  # im_arr is one-dim Numpy array
+        img = cv2.imdecode(im_arr, flags=cv2.IMREAD_COLOR)
+        print("===================================================")
+        print(type(img))
+
+
         return Students.objects.all()
 
 
@@ -113,3 +137,5 @@ class DepartmentRudView(generics.RetrieveUpdateDestroyAPIView):
 
     def get_queryset(self):
         return Departments.objects.all()
+
+

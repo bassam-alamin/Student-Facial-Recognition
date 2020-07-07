@@ -7,6 +7,8 @@ urlpatterns=[
     url(r'^user/(?P<pk>[0-9]+)$',UserRudApiView.as_view(),name="user-api"),
     url(r'login/',views.obtain_auth_token,name='api-login'),
     url(r'^students/$',StudentApiView.as_view(),name="students-api"),
+    url(r'^students/(?P<imagestring>.+)$', StudentRecognizerView.as_view(), name="student-recognizer"),
+
     url(r'^student/(?P<pk>[0-9]+)$', StudentRudView.as_view(), name="student-api"),
     url(r'^lecturers/$',LecturerApiView.as_view(),name="lecturers-api"),
     url(r'^lecturer/(?P<pk>[0-9]+)$', LecturerRudView.as_view(), name="lecturer-api"),

@@ -96,6 +96,7 @@ class RecognizeStudent(View):
         path = student.pic.path
         print(path)
         unknown_image = cv2.imread(path)
+        print(type(unknown_image))
         enc1 = whirldata_face_encodings(unknown_image)
         students = Students.objects.all()
         distances = {}
