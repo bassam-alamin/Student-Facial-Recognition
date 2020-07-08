@@ -1,10 +1,15 @@
 import base64
 
-
 import numpy as np
+from django.http import HttpResponse, Http404
 from django.views.decorators.csrf import csrf_exempt
 from django.views.generic import View
+import json
+from rest_framework.response import Response
+
 from rest_framework import generics
+from rest_framework.views import APIView
+
 from .serializers import *
 from rest_framework.permissions import AllowAny
 from Recognition.views import *
@@ -41,21 +46,76 @@ class StudentApiView(generics.ListAPIView):
     def get_queryset(self):
         return Students.objects.all()
 
-class StudentRecognizerView(generics.ListAPIView):
+
+class StudentRecognizerView(APIView):
     lookup_field = "imagestring"
     serializer_class = StudentSerializer
     permission_classes = [AllowAny, ]
 
-    def get_queryset(self):
+    def get_object(self, pk):
+        try:
+            return Students.objects.get(pk=pk)
+        except Students.DoesNotExist:
+            raise Http404
+
+    def get(self, request, *args, **kwargs):
         imb64 = self.kwargs.get(self.lookup_field)
         im_bytes = base64.b64decode(imb64)
         im_arr = np.frombuffer(im_bytes, dtype=np.uint8)  # im_arr is one-dim Numpy array
-        img = cv2.imdecode(im_arr, flags=cv2.IMREAD_COLOR)
+        unknown_person = cv2.imdecode(im_arr, flags=cv2.IMREAD_COLOR)
         print("===================================================")
-        print(type(img))
+        print(type(unknown_person))
+        enc1 = whirldata_face_encodings(unknown_person)
+        students = Students.objects.all()
+        distances = {}
+        for i in students:
+            enc2 = i.image_features
+            distance = return_euclidean_distance(enc1, enc2)
+            print(distance)
+            if distance < 0.5:
+                distances.update({i.id: distance})
 
+        all = {}
+        context = {
+            'students': all,
+        }
+        if len(distances) > 0:
+            for k, v in enumerate(distances):
+                student = Students.objects.get(pk=v)
+                all.update({student.student_name.username: student.image.url})
+                print(distances)
+                snippet = self.get_object(v)
+                serializer = StudentSerializer(snippet)
+                return Response(serializer.data)
 
-        return Students.objects.all()
+    # def get_queryset(self):
+    #     imb64 = self.kwargs.get(self.lookup_field)
+    #     im_bytes = base64.b64decode(imb64)
+    #     im_arr = np.frombuffer(im_bytes, dtype=np.uint8)  # im_arr is one-dim Numpy array
+    #     unknown_person = cv2.imdecode(im_arr, flags=cv2.IMREAD_COLOR)
+    #     print("===================================================")
+    #     print(type(unknown_person))
+    #     enc1 = whirldata_face_encodings(unknown_person)
+    #     students = Students.objects.all()
+    #     distances = {}
+    #     for i in students:
+    #         enc2 = i.image_features
+    #         distance = return_euclidean_distance(enc1, enc2)
+    #         print(distance)
+    #         if distance < 0.5:
+    #             distances.update({i.id: distance})
+    #
+    #     all = {}
+    #     context = {
+    #         'students': all,
+    #     }
+    #     if len(distances) > 0:
+    #         for k, v in enumerate(distances):
+    #             student = Students.objects.get(pk=v)
+    #             all.update({student.student_name.username: student.image.url})
+    #             print(distances)
+    #
+    #     return Students.objects.all()
 
 
 class StudentRudView(generics.RetrieveUpdateDestroyAPIView):
@@ -137,5 +197,3 @@ class DepartmentRudView(generics.RetrieveUpdateDestroyAPIView):
 
     def get_queryset(self):
         return Departments.objects.all()
-
-
