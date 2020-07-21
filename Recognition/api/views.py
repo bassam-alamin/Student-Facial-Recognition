@@ -1,13 +1,15 @@
 import base64
 
 import numpy as np
-from django.http import HttpResponse, Http404
+from django.http import HttpResponse, Http404, JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.views.generic import View
 import json
+
+from rest_framework.generics import get_object_or_404
 from rest_framework.response import Response
 
-from rest_framework import generics
+from rest_framework import generics, status
 from rest_framework.views import APIView
 
 from .serializers import *
@@ -87,6 +89,7 @@ class StudentRecognizerView(APIView):
                 snippet = self.get_object(v)
                 serializer = StudentSerializer(snippet)
                 return Response(serializer.data)
+
 
     # def get_queryset(self):
     #     imb64 = self.kwargs.get(self.lookup_field)
@@ -170,6 +173,31 @@ class BookingApiView(generics.ListAPIView):
 
     def get_queryset(self):
         return Bookings.objects.all()
+
+
+class BookingExistance(APIView):
+    serializer_class = BookingSerializer
+    permission_classes = [AllowAny, ]
+
+    def get(self, request, *args, **kwargs):
+        query1 = self.request.GET.get('student_id')
+        query2 = self.request.GET.get('unit_id')
+
+        # booking = Bookings.objects.get(student=query1,unit_booked=query2)
+        booking = get_object_or_404(Bookings, student=query1, unit_booked=query2)
+
+        serializerbooking = BookingSerializer(booking)
+
+        return Response(serializerbooking.data)
+
+    def patch(self, request,*args,**kwargs):
+        pk = self.kwargs.get('pk')
+        booking_object = Bookings.objects.get(pk=pk)
+        booking_object.is_attended=True
+        booking_object.save()
+        serializer = BookingSerializer(booking_object)
+
+        return Response(serializer.data)
 
 
 class BookingRudView(generics.RetrieveUpdateDestroyAPIView):

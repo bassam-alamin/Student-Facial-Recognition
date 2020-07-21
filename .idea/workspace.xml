@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="f1ef2d00-5718-46d5-8618-71b0a2e94004" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Recognition/api/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Recognition/api/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Recognition/api/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Recognition/api/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Recognition/templates/Recognition/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/Recognition/templates/Recognition/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -169,7 +171,15 @@
       <workItem from="1594063239445" duration="1158000" />
       <workItem from="1594106984342" duration="4501000" />
       <workItem from="1594132989765" duration="5415000" />
-      <workItem from="1594190693343" duration="13585000" />
+      <workItem from="1594190693343" duration="14139000" />
+      <workItem from="1594281752703" duration="1619000" />
+      <workItem from="1594713987240" duration="1211000" />
+      <workItem from="1594842393279" duration="720000" />
+      <workItem from="1594972510186" duration="1832000" />
+      <workItem from="1595061023619" duration="2821000" />
+      <workItem from="1595155901648" duration="1427000" />
+      <workItem from="1595234236281" duration="1825000" />
+      <workItem from="1595322469984" duration="8949000" />
     </task>
     <servers />
   </component>
