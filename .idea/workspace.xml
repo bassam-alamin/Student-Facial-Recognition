@@ -5,7 +5,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Recognition/api/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Recognition/api/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Recognition/api/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Recognition/api/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Recognition/templates/Recognition/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/Recognition/templates/Recognition/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -49,8 +48,14 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Online_Transcript2" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="http.proxy" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -179,7 +184,27 @@
       <workItem from="1595061023619" duration="2821000" />
       <workItem from="1595155901648" duration="1427000" />
       <workItem from="1595234236281" duration="1825000" />
-      <workItem from="1595322469984" duration="8949000" />
+      <workItem from="1595322469984" duration="10029000" />
+      <workItem from="1595619563610" duration="1344000" />
+      <workItem from="1597740897511" duration="975000" />
+      <workItem from="1597957189020" duration="596000" />
+      <workItem from="1597958352677" duration="1288000" />
+      <workItem from="1598471784917" duration="660000" />
+      <workItem from="1601582085280" duration="2675000" />
+      <workItem from="1601919006338" duration="593000" />
+      <workItem from="1601964330353" duration="424000" />
+      <workItem from="1602158368972" duration="3340000" />
+      <workItem from="1602361138159" duration="1367000" />
+      <workItem from="1602410214398" duration="1205000" />
+      <workItem from="1602493258737" duration="988000" />
+      <workItem from="1602573048502" duration="812000" />
+      <workItem from="1602620960200" duration="726000" />
+      <workItem from="1602677053835" duration="4342000" />
+      <workItem from="1602778915532" duration="2428000" />
+      <workItem from="1603098441296" duration="12676000" />
+      <workItem from="1603179080609" duration="6832000" />
+      <workItem from="1603206005541" duration="1629000" />
+      <workItem from="1603280191386" duration="5332000" />
     </task>
     <servers />
   </component>

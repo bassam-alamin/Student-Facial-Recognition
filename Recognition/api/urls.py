@@ -16,12 +16,16 @@ urlpatterns=[
     url(r'^unit/(?P<pk>[0-9]+)$', UnitRudView.as_view(), name="unit-api"),
     url(r'^bookings/$', BookingApiView.as_view(), name="bookings-api"),
     url(r'^booking/(?P<pk>[0-9]+)$', BookingRudView.as_view(), name="booking-api"),
-    #check if student boot
+    #check if student booked
     url(r'^student/booking/$',BookingExistance.as_view(),name="booking-existance"),
     url(r'^student/booking/(?P<pk>[0-9]+)$', BookingExistance.as_view(), name="booking-update_attended"),
 
     url(r'^departments/$', DepartmentApiView.as_view(), name="departments-api"),
     url(r'^department/(?P<pk>[0-9]+)$', DepartmentRudView.as_view(), name="department-api"),
+
+    #students who attended the Examination
+
+    url(r'^attended/(?P<pk>[0-9]+)$',CurrentUnitReport.as_view(), name="currentUnit-report")
 
 
 ]

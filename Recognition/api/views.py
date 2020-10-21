@@ -90,7 +90,6 @@ class StudentRecognizerView(APIView):
                 serializer = StudentSerializer(snippet)
                 return Response(serializer.data)
 
-
     # def get_queryset(self):
     #     imb64 = self.kwargs.get(self.lookup_field)
     #     im_bytes = base64.b64decode(imb64)
@@ -190,10 +189,10 @@ class BookingExistance(APIView):
 
         return Response(serializerbooking.data)
 
-    def patch(self, request,*args,**kwargs):
+    def patch(self, request, *args, **kwargs):
         pk = self.kwargs.get('pk')
         booking_object = Bookings.objects.get(pk=pk)
-        booking_object.is_attended=True
+        booking_object.is_attended = True
         booking_object.save()
         serializer = BookingSerializer(booking_object)
 
@@ -225,3 +224,24 @@ class DepartmentRudView(generics.RetrieveUpdateDestroyAPIView):
 
     def get_queryset(self):
         return Departments.objects.all()
+
+
+# =================================Reports section======================================
+class CurrentUnitReport(APIView):
+    serializer_class = BookingSerializer
+    permission_classes = [AllowAny, ]
+
+    def get(self,request, *args, **kwargs):
+        bookings = Bookings.objects.filter(unit_booked=2,is_attended=0)
+
+        serializer = BookingSerializer(bookings,many=True)
+        context = []
+        for b in bookings:
+            print(b.student.student_name.first_name)
+            context.append({"first name":b.student.student_name.first_name,
+                            "second name":b.student.student_name.last_name,
+                            "reg no":b.student.reg_no})
+
+        print(type(bookings))
+
+        return Response(context)
