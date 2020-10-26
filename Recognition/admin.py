@@ -13,5 +13,6 @@ admin.site.register(Lecturer)
 admin.site.register(Units)
 admin.site.register(Bookings)
 admin.site.register(Recognizer)
+admin.site.register(ExamSession)
 
 

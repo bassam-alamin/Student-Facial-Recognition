@@ -21,8 +21,7 @@
                     <tr>
                         <th scope="col">Unit Title</th>
                         <th scope="col">Unit Code</th>
-                        <th scope="col">Unit Lecturer</th>
-                        <th scope="col">Book</th>
+                        <th scope="col">Action</th>
                     </tr>
                 </thead>
                 {% for u in result %}
@@ -30,9 +29,7 @@
                     <tr>
                         <td>{{ u.unit_title }}</td>
                         <td>{{ u.unit_code }}</td>
-                        <td>{{ u.unit_lecturer }}</td>
                         <td>
-
                             <form method="post">
                                 {% csrf_token %}
                                 <input type="text" name="unit_id" value="{{ u.pk }}" hidden>

@@ -25,14 +25,10 @@ class UnitForm(forms.ModelForm):
 
     class Meta:
         model = Units
-        fields = ['unit_title','unit_code','unit_lecturer','year','semester']
+        fields = ['unit_title','unit_code']
         widgets = {
             'unit_title': forms.TextInput(attrs={'class':'form-control','placeholder':'Unit title ...'}),
             'unit_code': forms.TextInput(attrs={'class': 'form-control ', 'placeholder': 'i.e Comp420 ...'}),
-            'unit_lecturer': forms.Select(attrs={'class': 'form-control '}),
-            'year': forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'year'}),
-            'semester': forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'semester'}),
-
         }
 
 class LecturerForm(forms.ModelForm):
@@ -51,6 +47,7 @@ class BookUnit(forms.ModelForm):
     class Meta:
         model = Bookings
         fields = ["student","unit_booked"]
+
 
 class StudentAddForm(forms.ModelForm):
 
@@ -75,20 +72,6 @@ class StudentAddForm(forms.ModelForm):
         # print(type(img))
 
         # return img
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

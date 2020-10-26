@@ -73,18 +73,24 @@ class Lecturer(models.Model):
 class Units(models.Model):
     unit_title = models.CharField(max_length=50)
     unit_code = models.CharField(max_length=30, unique=True)
-    unit_lecturer = models.ForeignKey(Lecturer, on_delete=models.CASCADE, related_name='unit_lecturer')
-    year = models.IntegerField()
-    semester = models.IntegerField()
 
     def __str__(self):
         return self.unit_code
+
+class ExamSession(models.Model):
+    unit = models.ForeignKey(Units,on_delete=models.SET_NULL,null=True)
+    lecturer = models.ForeignKey(Lecturer,on_delete=models.SET_NULL,null=True)
+    department = models.ForeignKey(Departments,on_delete=models.SET_NULL,null=True)
+
+    def __str__(self):
+        return self.unit.unit_code
 
 
 class Bookings(models.Model):
     student = models.ForeignKey(Students, on_delete=models.CASCADE, related_name="student_bookings")
     unit_booked = models.ForeignKey(Units, on_delete=models.CASCADE)
     is_attended = models.BooleanField(default=False)
+    exam_session = models.ForeignKey(ExamSession,on_delete=models.SET_NULL,null=True)
 
     def __str__(self):
         return str(self.unit_booked)

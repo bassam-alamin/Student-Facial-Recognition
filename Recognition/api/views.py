@@ -90,35 +90,6 @@ class StudentRecognizerView(APIView):
                 serializer = StudentSerializer(snippet)
                 return Response(serializer.data)
 
-    # def get_queryset(self):
-    #     imb64 = self.kwargs.get(self.lookup_field)
-    #     im_bytes = base64.b64decode(imb64)
-    #     im_arr = np.frombuffer(im_bytes, dtype=np.uint8)  # im_arr is one-dim Numpy array
-    #     unknown_person = cv2.imdecode(im_arr, flags=cv2.IMREAD_COLOR)
-    #     print("===================================================")
-    #     print(type(unknown_person))
-    #     enc1 = whirldata_face_encodings(unknown_person)
-    #     students = Students.objects.all()
-    #     distances = {}
-    #     for i in students:
-    #         enc2 = i.image_features
-    #         distance = return_euclidean_distance(enc1, enc2)
-    #         print(distance)
-    #         if distance < 0.5:
-    #             distances.update({i.id: distance})
-    #
-    #     all = {}
-    #     context = {
-    #         'students': all,
-    #     }
-    #     if len(distances) > 0:
-    #         for k, v in enumerate(distances):
-    #             student = Students.objects.get(pk=v)
-    #             all.update({student.student_name.username: student.image.url})
-    #             print(distances)
-    #
-    #     return Students.objects.all()
-
 
 class StudentRudView(generics.RetrieveUpdateDestroyAPIView):
     lookup_field = "pk"
@@ -174,6 +145,8 @@ class BookingApiView(generics.ListAPIView):
         return Bookings.objects.all()
 
 
+# Confirm if the found student has Booked the exam session and update his booking as attended
+
 class BookingExistance(APIView):
     serializer_class = BookingSerializer
     permission_classes = [AllowAny, ]
@@ -183,7 +156,7 @@ class BookingExistance(APIView):
         query2 = self.request.GET.get('unit_id')
 
         # booking = Bookings.objects.get(student=query1,unit_booked=query2)
-        booking = get_object_or_404(Bookings, student=query1, unit_booked=query2)
+        booking = get_object_or_404(Bookings, student=query1, exam_session=query2)
 
         serializerbooking = BookingSerializer(booking)
 
@@ -191,11 +164,12 @@ class BookingExistance(APIView):
 
     def patch(self, request, *args, **kwargs):
         pk = self.kwargs.get('pk')
+
         booking_object = Bookings.objects.get(pk=pk)
+
         booking_object.is_attended = True
         booking_object.save()
         serializer = BookingSerializer(booking_object)
-
         return Response(serializer.data)
 
 
@@ -226,21 +200,39 @@ class DepartmentRudView(generics.RetrieveUpdateDestroyAPIView):
         return Departments.objects.all()
 
 
+# ==================================Exam Session serialzier ============================
+
+class ExamSessionView(APIView):
+    serializer_class = ExamsessionSerializer
+    permission_classes = [AllowAny, ]
+
+    def get(self, request, *args, **kwargs):
+        lecturer_pk = self.kwargs.get("pk")
+        e_session = ExamSession.objects.filter(lecturer=lecturer_pk)
+        sessions = []
+
+        for s in e_session:
+            sessions.append({"id":s.id,
+                             "unit":s.unit.unit_code,
+                             "department":s.department.department_name
+                             })
+        return Response(sessions)
+
+
 # =================================Reports section======================================
 class CurrentUnitReport(APIView):
     serializer_class = BookingSerializer
     permission_classes = [AllowAny, ]
 
-    def get(self,request, *args, **kwargs):
-        bookings = Bookings.objects.filter(unit_booked=2,is_attended=0)
+    def get(self, request, *args, **kwargs):
+        bookings = Bookings.objects.filter(unit_booked=1, is_attended=1)
 
-        serializer = BookingSerializer(bookings,many=True)
         context = []
         for b in bookings:
             print(b.student.student_name.first_name)
-            context.append({"first name":b.student.student_name.first_name,
-                            "second name":b.student.student_name.last_name,
-                            "reg no":b.student.reg_no})
+            context.append({"first name": b.student.student_name.first_name,
+                            "second name": b.student.student_name.last_name,
+                            "reg no": b.student.reg_no})
 
         print(type(bookings))
 

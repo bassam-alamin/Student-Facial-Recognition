@@ -154,7 +154,6 @@ class UnitBooking(View):
             student = Students.objects.get(student_name=user)
             print("student is", student)
             units_booked = Bookings.objects.filter(student=student)
-            print(units_booked)
         except Students.DoesNotExist:
             return render(request, self.template_name, {'result': result, 'units_booked': units_booked})
 
@@ -164,13 +163,26 @@ class UnitBooking(View):
         user = request.user
         print(user)
         unit_id = request.POST.get("unit_id")
-
         try:
             student = Students.objects.get(student_name=user)
             print(student)
+            department_of_student = student.student_name.department
             unit = Units.objects.get(pk=unit_id)
-            Bookings.objects.create(student=student, unit_booked_id=unit.id)
+            exam_session = ExamSession.objects.get(unit_id=unit.id,department_id=department_of_student.id)
+
+            booking_existance = Bookings.objects.filter(student=student,exam_session=exam_session)
+            print(booking_existance)
+
+            if booking_existance.exists():
+                print("there is a problem")
+
+                return redirect("recognition:unit-booking")
+            else:
+                print("created")
+                Bookings.objects.create(student=student, unit_booked_id=unit.id,exam_session=exam_session)
+
         except ObjectDoesNotExist:
+
             return redirect("recognition:unit-booking")
 
         return redirect("recognition:unit-booking")

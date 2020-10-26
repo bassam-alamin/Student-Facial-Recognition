@@ -4,6 +4,7 @@ from django.contrib.auth import get_user_model
 
 User = get_user_model()
 
+
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
@@ -37,4 +38,10 @@ class BookingSerializer(serializers.ModelSerializer):
 class DepartmentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Departments
+        fields = "__all__"
+
+
+class ExamsessionSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ExamSession
         fields = "__all__"
