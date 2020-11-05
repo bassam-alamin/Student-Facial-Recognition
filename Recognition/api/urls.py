@@ -7,8 +7,8 @@ urlpatterns=[
     # user login url
     url(r'login/',views.obtain_auth_token,name='api-login'),
 
-    # specific user search with username
-    url(r'^users/(?P<username>.+)$',UserApiView.as_view(),name="users-api"),
+    # get logged user and check if its the lecturer
+    url(r'^users/(?P<staff_no>.+)$',UserApiView.as_view(),name="users-api"),
     # specific user url with id
     url(r'^user/(?P<pk>[0-9]+)$',UserRudApiView.as_view(),name="user-api"),
 
@@ -50,6 +50,5 @@ urlpatterns=[
 
     # students who attended the Examination session
     url(r'^attended/(?P<pk>[0-9]+)$',CurrentUnitReport.as_view(), name="currentUnit-report")
-
 
 ]

@@ -3,20 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="f1ef2d00-5718-46d5-8618-71b0a2e94004" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Recognition/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/Recognition/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Recognition/api/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/Recognition/api/serializers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Recognition/api/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Recognition/api/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Recognition/api/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Recognition/api/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Recognition/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/Recognition/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Recognition/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Recognition/migrations/0002_auto_20200305_0044.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Recognition/migrations/0003_auto_20200307_2331.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Recognition/migrations/0004_recognizer.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Recognition/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Recognition/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Recognition/templates/Recognition/bookUnits.html" beforeDir="false" afterPath="$PROJECT_DIR$/Recognition/templates/Recognition/bookUnits.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Recognition/templates/Recognition/units.html" beforeDir="false" afterPath="$PROJECT_DIR$/Recognition/templates/Recognition/units.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Recognition/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Recognition/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -218,7 +207,20 @@
       <workItem from="1603280191386" duration="14998000" />
       <workItem from="1603534135973" duration="6095000" />
       <workItem from="1603626691768" duration="6452000" />
-      <workItem from="1603703091299" duration="862000" />
+      <workItem from="1603703091299" duration="1814000" />
+      <workItem from="1603714168124" duration="4595000" />
+      <workItem from="1603795235854" duration="1218000" />
+      <workItem from="1603800354362" duration="1357000" />
+      <workItem from="1603806917818" duration="2677000" />
+      <workItem from="1603884237975" duration="7741000" />
+      <workItem from="1603954941412" duration="2559000" />
+      <workItem from="1603973737924" duration="668000" />
+      <workItem from="1604002979092" duration="9173000" />
+      <workItem from="1604324782730" duration="2118000" />
+      <workItem from="1604404940825" duration="1022000" />
+      <workItem from="1604433856300" duration="625000" />
+      <workItem from="1604518910061" duration="632000" />
+      <workItem from="1604569246571" duration="594000" />
     </task>
     <servers />
   </component>

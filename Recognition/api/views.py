@@ -17,18 +17,33 @@ from rest_framework.permissions import AllowAny
 from Recognition.views import *
 
 
-class UserApiView(generics.RetrieveUpdateDestroyAPIView):
-    lookup_field = "username"
-    serializer_class = UserSerializer
+# part to authenticate ony lecturers and return other details
+
+class UserApiView(APIView):
+    lookup_field = "staff_no"
+    serializer_class = LecturerSerializer
     permission_classes = [AllowAny, ]
 
-    def get_queryset(self):
-        return User.objects.all()
+    def get(self, request, *args, **kwargs):
+        staff_no = self.kwargs.get("staff_no")
+        lecturer = get_object_or_404(Lecturer, staff_no=staff_no)
+        context = []
+        if lecturer:
+            context.append({
+                "id": lecturer.id,
+                "first_name": lecturer.lecturer_name.first_name,
+                "second_name": lecturer.lecturer_name.last_name,
+                "username":lecturer.lecturer_name.username,
+                "department": lecturer.lecturer_name.department.department_name
+            })
 
-    def perform_create(self, serializer):
-        instance = serializer.save()
-        instance.set_password(instance.password)
-        instance.save()
+        return Response({
+                "id": lecturer.id,
+                "first_name": lecturer.lecturer_name.first_name,
+                "second_name": lecturer.lecturer_name.last_name,
+                "username":lecturer.lecturer_name.username,
+                "department": lecturer.lecturer_name.department.department_name
+            })
 
 
 class UserRudApiView(generics.RetrieveUpdateDestroyAPIView):
@@ -153,7 +168,7 @@ class BookingExistance(APIView):
 
     def get(self, request, *args, **kwargs):
         query1 = self.request.GET.get('student_id')
-        query2 = self.request.GET.get('unit_id')
+        query2 = self.request.GET.get('session_id')
 
         # booking = Bookings.objects.get(student=query1,unit_booked=query2)
         booking = get_object_or_404(Bookings, student=query1, exam_session=query2)
@@ -212,9 +227,9 @@ class ExamSessionView(APIView):
         sessions = []
 
         for s in e_session:
-            sessions.append({"id":s.id,
-                             "unit":s.unit.unit_code,
-                             "department":s.department.department_name
+            sessions.append({"id": s.id,
+                             "unit": s.unit.unit_code,
+                             "department": s.department.department_name
                              })
         return Response(sessions)
 
@@ -225,14 +240,15 @@ class CurrentUnitReport(APIView):
     permission_classes = [AllowAny, ]
 
     def get(self, request, *args, **kwargs):
-        bookings = Bookings.objects.filter(unit_booked=1, is_attended=1)
+        session_id = self.kwargs.get("pk")
+        bookings = Bookings.objects.filter(exam_session=session_id, is_attended=1)
 
         context = []
         for b in bookings:
             print(b.student.student_name.first_name)
-            context.append({"first name": b.student.student_name.first_name,
-                            "second name": b.student.student_name.last_name,
-                            "reg no": b.student.reg_no})
+            context.append({"first_name": b.student.student_name.first_name,
+                            "second_name": b.student.student_name.last_name,
+                            "reg_no": b.student.reg_no})
 
         print(type(bookings))
 
