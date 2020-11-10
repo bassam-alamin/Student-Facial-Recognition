@@ -21,6 +21,9 @@ class Departments(models.Model):
     def __str__(self):
         return self.department_name
 
+    def get_queryset(self):
+        return Departments.objects.all()
+
 class User(AbstractUser):
     is_student = models.BooleanField(default=False)
     is_lecturer = models.BooleanField(default=False)

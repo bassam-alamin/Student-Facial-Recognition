@@ -1,0 +1,68 @@
+{% extends 'Recognition/admin_base.html' %}
+{% load static %}
+{% block body %}
+    <div class="row">
+                    <div class="col-md-12">
+                        <div class="search-form">
+                            <form>
+                                <div class="sf-type">
+                                    <div class="sf-input">
+                                        <input type="text" id="sf-box" placeholder="Search course and discount courses">
+                                    </div>
+                                    </div>
+                                <div class="sf-submit">
+                                    <input type="submit" value="Search Course">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+
+                    <div class="sb2-2-3">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="box-inn-sp">
+                                <div class="inn-title">
+                                    <h4>Student Details</h4>
+                                    <p>All about students like name, student id, phone, email, country, city and more</p>
+                                </div>
+                                <div class="tab-inn">
+                                    <div class="table-responsive table-desi">
+                                        <table class="table table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th>First Name</th>
+                                                    <th>Second Name</th>
+                                                    <th>User name</th>
+                                                    <th>Course</th>
+                                                    <th>Phone</th>
+                                                    <th>Email</th>
+													<th>Reg No</th>
+													<th>View</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                            {% for user in users %}
+                                                <tr>
+                                                    <td>{{ user.first_name }}</td>
+                                                    <td>{{ user.last_name }}</td>
+                                                    <td><span class="list-enq-name">{{ user.username }}</span></td>
+                                                    <td>{{ user.department }}</td>
+                                                    <td>{{ user.phone_no }}</td>
+													<td>{{ user.email }}</td>
+                                                    <td>S13/15302/16</td>
+													<td><a href="{% url 'recognition:user-update' user.id %}" class="ad-st-view">View</a></td>
+                                                </tr>
+                                            {% endfor %}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+{% endblock %}

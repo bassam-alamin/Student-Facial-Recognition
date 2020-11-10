@@ -1,23 +1,45 @@
- {% extends 'Recognition/base.html' %}
+ {% extends 'Recognition/admin_base.html' %}
 {% block body %}
-    <div class="row p-0 m-0">
-    <div class="col-md-4"></div>
-    <div class="col-md-4">
-    <h5>Add Student</h5>
-        <form method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-            {% for field in form %}
-                <div class="m-3">
-                    {{ field }}
+                <!--== User Details ==-->
+                <div class="sb2-2-3">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="box-inn-sp admin-form">
+				<div class="sb2-2-add-blog sb2-2-1">
+                    <h2>Update Unit</h2>
+                    <p>The .table class adds basic styling (light padding and only horizontal dividers) to a table:</p>
+
+                    <div class="tab-content">
+                        <div id="home" class="tab-pane fade active in">
+                            <div class="box-inn-sp">
+                                <div class="inn-title">
+                                    <h4>Add Student</h4>
+                                    <p>Airtport Hotels The Right Way To Start A Short Break Holiday</p>
+                                </div>
+                                <div class="bor">
+                                    <form method="post" enctype="multipart/form-data">
+                                        {% csrf_token %}
+                                       {% for field in form %}
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                                {{ field }}
+                                            </div>
+                                        </div>
+                                        {% endfor %}
+
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                                <i class="waves-effect waves-light btn-large waves-input-wrapper" style=""><input type="submit" class="waves-button-input" value="Submit"></i>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            {% endfor %}
-        <div class="col-md-4">
-            <button type="submit" class="form-control  btn-success m-">Submit</button>
-        </div>
-        </form>
-    </div>
-
-    <div class="col-md-4"></div>
-    </div>
-
+                            </div>
+                        </div>
+                    </div>
+                </div>
  {% endblock %}

@@ -1,5 +1,124 @@
  {% extends 'Recognition/base.html' %}
+{% load static %}
 {% block body %}
+        <!-- SLIDER -->
+    <section>
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+                <div class="item slider1 active">
+                    <img src="{% static 'Recognition/images/egerton_university.jpg' %}" alt="">
+                    <div class="carousel-caption slider-con">
+                        <h2>Welcome to <span>University</span></h2>
+                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form</p>
+                        <a href="#" class="bann-btn-1">All Courses</a><a href="#" class="bann-btn-2">Read More</a>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="{% static 'Recognition/images/2.jpg' %}" alt="">
+                    <div class="carousel-caption slider-con">
+                        <h2>Admission open <span>2018</span></h2>
+                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form</p>
+                        <a href="#" class="bann-btn-1">Admission</a><a href="#" class="bann-btn-2">Read More</a>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="{% static 'Recognition/images/3.jpg' %}" alt="">
+                    <div class="carousel-caption slider-con">
+                        <h2>Education <span>Master</span></h2>
+                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form</p>
+                        <a href="#" class="bann-btn-1">All Courses</a><a href="#" class="bann-btn-2">Read More</a>
+                    </div>
+                </div>
+            </div>
 
- <h1 class="text-center m-5 p-5">Welcome to students Face recognition</h1>
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                <i class="fa fa-chevron-left slider-arr"></i>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                <i class="fa fa-chevron-right slider-arr"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- POPULAR COURSES -->
+    <section class="pop-cour">
+        <div class="container com-sp pad-bot-70">
+            <div class="row">
+                <div class="con-title">
+                    <h2>Popular <span>Courses</span></h2>
+                    <p>Fusce id sem at ligula laoreet hendrerit venenatis sed purus. Ut pellentesque maximus lacus, nec pharetra augue.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div>
+                        <!--POPULAR COURSES-->
+                        <div class="home-top-cour">
+                            <!--POPULAR COURSES IMAGE-->
+                            <div class="col-md-3"> <img src="images/course/sm-1.jpg" alt=""> </div>
+                            <!--POPULAR COURSES: CONTENT-->
+                            <div class="col-md-9 home-top-cour-desc">
+                                <a href="course-details.html">
+                                    <h3>Food Science and Technology</h3>
+                                </a>
+                                <h4>Food nd Technology</h4>
+                                <p>Classes started from coming friday(21 jun 2021)</p> <span class="home-top-cour-rat">4.2</span>
+
+                            </div>
+                        </div>
+                        <!--POPULAR COURSES-->
+                        <div class="home-top-cour">
+                            <!--POPULAR COURSES IMAGE-->
+                            <div class="col-md-3"> <img src="images/course/sm-3.jpg" alt=""> </div>
+                            <!--POPULAR COURSES: CONTENT-->
+                            <div class="col-md-9 home-top-cour-desc">
+                                <a href="course-details.html">
+                                    <h3>Biochemistry</h3>
+                                </a>
+                                <h4>Chemistry and Technology</h4>
+                                <p>Classes started from coming friday(21 jun 2021)</p> <span class="home-top-cour-rat">4.2</span>
+                            </div>
+                        </div>
+                        <!--POPULAR COURSES-->
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div>
+                        <!--POPULAR COURSES-->
+                        <div class="home-top-cour">
+                            <!--POPULAR COURSES IMAGE-->
+                            <div class="col-md-3"> <img src="images/course/sm-5.jpg" alt=""> </div>
+                            <!--POPULAR COURSES: CONTENT-->
+                            <div class="col-md-9 home-top-cour-desc">
+                                <a href="course-details.html">
+                                    <h3>Computer Science</h3>
+                                </a>
+                                <h4>Technology and Trends</h4>
+                                <p>Classes started from coming friday(21 jun 2021)</p> <span class="home-top-cour-rat">4.2</span>
+
+                            </div>
+                        </div>
+                        <!--POPULAR COURSES-->
+                        <div class="home-top-cour">
+                            <!--POPULAR COURSES IMAGE-->
+                            <div class="col-md-3"> <img src="images/course/sm-6.jpg" alt=""> </div>
+                            <!--POPULAR COURSES: CONTENT-->
+                            <div class="col-md-9 home-top-cour-desc">
+                                <a href="course-details.html">
+                                    <h3>Agricultural Engineering</h3>
+                                </a>
+                                <h4>Agriculture and Technology</h4>
+                                <p>Classes started from coming friday(21 jun 2021)</p> <span class="home-top-cour-rat">4.2</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
  {% endblock %}

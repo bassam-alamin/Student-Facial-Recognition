@@ -1,15 +1,26 @@
 {% extends 'Recognition/base.html' %}
+{% load static %}
 {% block body %}
-   <div class="container-fluid">
-           <div class="row d-flex justify-content-center">
-         <div class="col-md-4">
-             <h2>Log in</h2>
-             <form method="post" enctype="multipart/form-data">
+    <div id="modal1"  role="dialog">
+            <div class="log-in-pop">
+                <div class="log-in-pop-left">
+                    <h1>Hello Student</h1>
+                    <p>Log in to Your Portal</p>
+                </div>
+                <div class="log-in-pop-right">
+
+                    <h4>Login</h4>
+                    <p>Don't have an account? Create your account. It's take less then a minutes</p>
+             <form method="post" enctype="multipart/form-data" class="s12">
                  {% csrf_token %}
 
                 {% include 'Recognition/login_form.html' %}
 
-                 <button type="submit">Login</button>
+                    <div>
+                        <div class="input-field s4">
+                            <input type="submit" value="Login" class="waves-effect waves-light log-in-btn">
+                        </div>
+                    </div>
              </form>
          </div>
     </div>

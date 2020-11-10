@@ -1,0 +1,56 @@
+{% extends 'Recognition/admin_base.html' %}
+{% load static %}
+{% block body %}
+ <div class="row">
+                    <div class="col-md-12">
+                        <div class="search-form">
+                            <form>
+                                <div class="sf-type">
+                                    <div class="sf-input">
+                                        <input type="text" id="sf-box" placeholder="Search course and discount courses">
+                                    </div>
+                                    </div>
+                                <div class="sf-submit">
+                                    <input type="submit" value="Search Course">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+ </div>
+<div class="sb2-2-3">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="box-inn-sp">
+                                <div class="inn-title">
+                                    <h4>Course Details</h4>
+                                    <p>All about courses Offered</p>
+                                </div>
+                                <div class="tab-inn">
+                                    <div class="table-responsive table-desi">
+                                        <table class="table table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th>Course Name</th>
+													<th>Department</th>
+													<th>View</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                            {% for course in courses %}
+                                                <tr>
+                                                    <td><span class="list-enq-name">{{course.department_name}}</span></td>
+                                                    <td>Computer Science</td>
+													<td><a href="{% url 'recognition:course-update' course.id %}" class="ad-st-view">Update</a></td>
+                                                </tr>
+                                            {% endfor %}
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+{% endblock %}

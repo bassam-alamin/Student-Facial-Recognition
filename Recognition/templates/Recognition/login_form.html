@@ -1,14 +1,9 @@
 {% for field in form %}
-        <div class="form-group">
-        {% if field.html_name == "username" %}
-            <label for ="{{ field.id_for_label }}" class="label" style="padding: 0;margin: 0;">{{ field.html_name}}</label>
-        {% else %}
-                <label for ="{{ field.id_for_label }}" class="label" style="padding: 0;margin: 0;">{{ field.html_name}}</label>
-        {% endif %}
-                <div style="padding: 0;margin: 0;" >
+            <div>
+                <div class="input-field s12">
                     {{ field }}
                 </div>
-                <p class="text-success">{{ field.help_text }}</p>
-                </div>
+            </div>
     <p class="">{{ field.errors }}</p>
 {% endfor %}
+

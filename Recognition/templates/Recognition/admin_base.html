@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Egerton | Admin</title>
+        {% load static %}
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="#" type="image/x-icon">
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700%7CJosefin+Sans:600,700" rel="stylesheet">
+
+
+    <link rel="stylesheet" type="text/css" href="{% static 'Recognition/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'Recognition/css/materialize.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'Recognition/css/bootstrap.css' %}">
+     <link rel="stylesheet" type="text/css" href="{% static 'Recognition/css/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'Recognition/css/style-mob.css' %}">
+</head>
+<body>
+
+    <!--== MAIN CONTRAINER ==-->
+    <div class="container-fluid sb1">
+        <div class="row">
+            <!--== LOGO ==-->
+            <div class="col-md-2 col-sm-3 col-xs-6 sb1-1">
+                <a href="#" class="btn-close-menu"><i class="fa fa-times" aria-hidden="true"></i></a>
+                <a href="#" class="atab-menu"><i class="fa fa-bars tab-menu" aria-hidden="true"></i></a>
+                <a href="index-2.html" class="logo"><img src="images/logo1.png" alt="" />
+                </a>
+            </div>
+            <!--== SEARCH ==-->
+            <div class="col-md-6 col-sm-6 mob-hide">
+                <form class="app-search">
+                    <input type="text" placeholder="Search..." class="form-control">
+                    <a href="#"><i class="fa fa-search"></i></a>
+                </form>
+            </div>
+            <!--== NOTIFICATION ==-->
+            <div class="col-md-2 tab-hide">
+                <div class="top-not-cen">
+                    <a class='waves-effect btn-noti' href="admin-all-enquiry.html" title="all enquiry messages"><i class="fa fa-commenting-o" aria-hidden="true"></i><span>5</span></a>
+                    <a class='waves-effect btn-noti' href="admin-course-enquiry.html" title="course booking messages"><i class="fa fa-envelope-o" aria-hidden="true"></i><span>5</span></a>
+                    <a class='waves-effect btn-noti' href="admin-admission-enquiry.html" title="admission enquiry"><i class="fa fa-tag" aria-hidden="true"></i><span>5</span></a>
+                </div>
+            </div>
+            <!--== MY ACCCOUNT ==-->
+            <div class="col-md-2 col-sm-3 col-xs-6">
+                <!-- Dropdown Trigger -->
+                <a class='waves-effect dropdown-button top-user-pro' href='#' data-activates='top-menu'><img src="images/user/6.png" alt="" />My Account <i class="fa fa-angle-down" aria-hidden="true"></i>
+                </a>
+
+                <!-- Dropdown Structure -->
+                <ul id='top-menu' class='dropdown-content top-menu-sty'>
+                    <li><a href="admin-panel-setting.html" class="waves-effect"><i class="fa fa-cogs" aria-hidden="true"></i>Admin Setting</a>
+                    </li>
+                    <li class="divider"></li>
+                    <li><a href="#" class="ho-dr-con-last waves-effect"><i class="fa fa-sign-in" aria-hidden="true"></i> Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!--== BODY CONTNAINER ==-->
+    <div class="container-fluid sb2">
+        <div class="row">
+            <div class="sb2-1">
+                <!--== USER INFO ==-->
+                <div class="sb2-12">
+                    <ul>
+                        <li><img src="images/placeholder.jpg" alt="">
+                        </li>
+                        <li>
+                            <h5>Victoria Baker <span> Santa Ana, CA</span></h5>
+                        </li>
+                        <li></li>
+                    </ul>
+                </div>
+                <!--== LEFT MENU ==-->
+                <div class="sb2-13">
+                    <ul class="collapsible" data-collapsible="accordion">
+                        <li><a href="{% url 'recognition:dashboard' %}" class="menu-active"><i class="fa fa-bar-chart" aria-hidden="true"></i> Dashboard</a>
+                        </li>
+                        </li>
+                        <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-book" aria-hidden="true"></i> All Courses</a>
+                            <div class="collapsible-body left-sub-menu">
+                                <ul>
+                                    <li><a href="{% url 'recognition:courses' %}">All Course</a>
+                                    </li>
+                                    <li><a href="{% url 'recognition:add-course' %}">Add New Course</a>
+                                    </li>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-book" aria-hidden="true"></i> Units</a>
+                            <div class="collapsible-body left-sub-menu">
+                                <ul>
+                                    <li><a href="{% url 'recognition:units' %}">All Units</a>
+                                    </li>
+                                    <li><a href="{% url 'recognition:unit-add' %}">Add New Unit</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-user" aria-hidden="true"></i> Users</a>
+                            <div class="collapsible-body left-sub-menu">
+                                <ul>
+                                    <li><a href="{% url 'recognition:all-users' %}">All Users</a>
+                                    </li>
+{#                                    <li><a href="admin-user-add.html">Add New user</a>#}
+{#                                    </li>#}
+                                </ul>
+                            </div>
+                        </li>
+
+                        <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-pencil" aria-hidden="true"></i> Exam time table</a>
+                            <div class="collapsible-body left-sub-menu">
+                                <ul>
+                                    <li><a href="{% url 'recognition:exam-sessions' %}">All Exams</a></li>
+                                    <li><a href="{% url 'recognition:exam-add' %}">Add New Exam</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-users" aria-hidden="true"></i> Students</a>
+                            <div class="collapsible-body left-sub-menu">
+                                <ul>
+                                    <li><a href="{% url 'recognition:students' %}">All Students</a>
+                                    </li>
+                                    <li><a href="{% url 'recognition:student-add' %}">Add New Students</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-users" aria-hidden="true"></i> Lecturers</a>
+                            <div class="collapsible-body left-sub-menu">
+                                <ul>
+                                    <li><a href="{% url 'recognition:lecturers' %}">All Lecturers</a>
+                                    </li>
+                                    <li><a href="{% url 'recognition:lecturer-add' %}">Add New Lecturer</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <!--== BODY INNER CONTAINER ==-->
+            <div class="sb2-2">
+
+                <!--== breadcrumbs ==-->
+                <div class="sb2-2-2">
+                    <ul>
+                        <li><a href="index-2.html"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
+                        </li>
+                        <li class="active-bre"><a href="#"> Dashboard</a>
+                        </li>
+                        <li class="page-back"><a href="{% url 'recognition:dashboard' %}"><i class="fa fa-backward" aria-hidden="true"></i> Back</a>
+                        </li>
+                    </ul>
+                </div>
+                {% block body %}
+                {% endblock %}
+
+                <!--== User Details ==-->
+
+                <!--== User Details ==-->
+
+            </div>
+
+        </div>
+    </div>
+
+
+
+<script src = {% static 'Recognition/js/main.min.js' %}></script>
+<script src = {% static 'Recognition/js/bootstrap.min.js' %}></script>
+<script src = {% static 'Recognition/js/materialize.min.js' %}></script>
+<script src = {% static 'Recognition/js/custom.js' %}></script>
+</body>
+
+</html>

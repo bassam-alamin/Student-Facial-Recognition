@@ -1,0 +1,62 @@
+{% extends 'Recognition/admin_base.html' %}
+{% load static %}
+{% block body %}
+    <div class="row">
+                    <div class="col-md-12">
+                        <div class="search-form">
+                            <form>
+                                <div class="sf-type">
+                                    <div class="sf-input">
+                                        <input type="text" id="sf-box" placeholder="Search course and discount courses">
+                                    </div>
+                                    </div>
+                                <div class="sf-submit">
+                                    <input type="submit" value="Search Course">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+
+                    <div class="sb2-2-3">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="box-inn-sp">
+                                <div class="inn-title">
+                                    <h4>Exam Sessions Details</h4>
+                                    <p>All about students like name, student id, phone, email, country, city and more</p>
+                                </div>
+                                <div class="tab-inn">
+                                    <div class="table-responsive table-desi">
+                                        <table class="table table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th>Unit Code</th>
+                                                    <th>Unit Name</th>
+                                                    <th>Lecturer</th>
+                                                    <th>Department</th>
+                                                    <th>Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                            {% for session in exam_sessions %}
+                                                <tr>
+                                                    <td>{{ session.unit_code }}</td>
+                                                    <td>{{ session.unit_name }}</td>
+                                                    <td><span class="list-enq-name">{{ session.lecturer }}</span></td>
+                                                    <td>{{ session.department_name }}</td>
+													<td><a href="{% url 'recognition:exam-update' session.id %}" class="ad-st-view">Update</a></td>
+                                                </tr>
+                                            {% endfor %}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+{% endblock %}

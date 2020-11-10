@@ -1,0 +1,72 @@
+ {% extends 'Recognition/admin_base.html' %}
+{% block body %}
+
+{# <h3>Egerton University Departments</h3>#}
+{#<div class="row m-0 p-0">#}
+{#    <div class="col-md-4"></div>#}
+{#    <div class="col-md-4"></div>#}
+{##}
+{#    <div class="col-md-4">#}
+{#        <h6 class="text-center">Add Department</h6>#}
+{#        <form method="post" enctype="multipart/form-data" >#}
+{#            {% csrf_token %}#}
+{#            <div class="row">#}
+{#                {% for field in form %}#}
+{#                    <div class="col-md-6">#}
+{#                        {{ field }}#}
+{#                    </div>#}
+{#                {% endfor %}#}
+{#                <div class="col-md-3">#}
+{#                    <button type="submit" class="form-control">Add</button>#}
+{#                </div>#}
+{#        </div>#}
+{##}
+{#    </form>#}
+{##}
+{##}
+{#    </div>#}
+{#</div>#}
+
+
+
+                <!--== User Details ==-->
+                <div class="sb2-2-3">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="box-inn-sp admin-form">
+				<div class="sb2-2-add-blog sb2-2-1">
+                    <h2>Update Unit</h2>
+                    <p>The .table class adds basic styling (light padding and only horizontal dividers) to a table:</p>
+
+                    <div class="tab-content">
+                        <div id="home" class="tab-pane fade active in">
+                            <div class="box-inn-sp">
+                                <div class="inn-title">
+                                    <h4>Unit Information</h4>
+                                    <p>Airtport Hotels The Right Way To Start A Short Break Holiday</p>
+                                </div>
+                                <div class="bor">
+                                    <form method="post" enctype="multipart/form-data">
+                                        {% csrf_token %}
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                                {{ form.as_p}}
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                                <i class="waves-effect waves-light btn-large waves-input-wrapper" style=""><input type="submit" class="waves-button-input" value="Submit"></i>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+ {% endblock %}

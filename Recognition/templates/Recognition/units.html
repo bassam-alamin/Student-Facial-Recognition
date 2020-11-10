@@ -1,36 +1,62 @@
- {% extends 'Recognition/base.html' %}
+ {% extends 'Recognition/admin_base.html' %}
 {% block body %}
-
-    <h3>Welcome to egerton units</h3>
-    <div class="row p-0 m-0">
-        <div class="col-md-4"></div>
-        <div class="col-md-6"></div>
-        <div class="col-md-2">
-            <a href="{% url 'recognition:unit-add' %}" class="form-control btn-success">Add Unit</a>
-        </div>
-
-    </div>
-     <div class="col-md-8 mt-2">
-            <table class="table table-dark table-hover">
-                <thead>
-                    <tr>
-                        <th scope="col">Unit Title</th>
-                        <th scope="col">Unit Code</th>
-                    </tr>
-                </thead>
-                {% for u in units %}
-                <tbody>
-                    <tr>
-                        <td>{{ u.unit_title }}</td>
-                        <td>{{ u.unit_code }}</td>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="search-form">
+                            <form>
+                                <div class="sf-type">
+                                    <div class="sf-input">
+                                        <input type="text" id="sf-box" placeholder="Search course and discount courses">
+                                    </div>
+                                    </div>
+                                <div class="sf-submit">
+                                    <input type="submit" value="Search Course">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
 
 
+    <div class="sb2-2-3">
+                    <div class="row">
+                        <!--== Listing Enquiry ==-->
+                        <div class="col-md-12">
+                            <div class="box-inn-sp">
+                                <div class="inn-title">
+                                    <h4>Units</h4>
+                                    <p>Education is about teaching, learning skills and knowledge.</p>
+                                </div>
+                                <div class="tab-inn">
+                                    <div class="table-responsive table-desi">
+                                        <table class="table table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th>Unit code</th>
+                                                    <th>Unit Name</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                            {% for unit in units %}
 
-                    </tr>
-                </tbody>
-                {% endfor %}
-            </table>
+                                                <tr>
+                                                    <td><span class="list-enq-name">{{ unit.unit_code}}</span></td>
+													<td>{{ unit.unit_title }}</td>
+                                                    <td>
+                                                        <a href="{% url 'recognition:unit-update' unit.id %}" class="ad-st-view">Update</a>
+                                                    </td>
+                                                </tr>
+                                            {% endfor %}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-     </div>
+
+
 
  {% endblock %}

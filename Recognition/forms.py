@@ -18,8 +18,10 @@ class DepartmentForm(forms.ModelForm):
         model = Departments
         fields = ['department_name']
         widgets = {
-            'department_name': forms.TextInput(attrs={'class':'form-control','placeholder':'Department name...'}),
+            'department_name': forms.TextInput(attrs={'class':'validate'}),
         }
+
+
 
 class UnitForm(forms.ModelForm):
 
@@ -27,8 +29,8 @@ class UnitForm(forms.ModelForm):
         model = Units
         fields = ['unit_title','unit_code']
         widgets = {
-            'unit_title': forms.TextInput(attrs={'class':'form-control','placeholder':'Unit title ...'}),
-            'unit_code': forms.TextInput(attrs={'class': 'form-control ', 'placeholder': 'i.e Comp420 ...'}),
+            'unit_title': forms.TextInput(attrs={'class':'validate'}),
+            'unit_code': forms.TextInput(attrs={'class': 'validate'}),
         }
 
 class LecturerForm(forms.ModelForm):
@@ -37,8 +39,8 @@ class LecturerForm(forms.ModelForm):
         model = Lecturer
         fields = ['lecturer_name',"staff_no"]
         widgets = {
-            'lecturer_name': forms.Select(attrs={'class':'form-control','placeholder':'Unit title ...'}),
-            'staff_no': forms.TextInput(attrs={'class': 'form-control ','placeholder':'Staff No....'}),
+            'lecturer_name': forms.Select(attrs={'class':'validate'}),
+            'staff_no': forms.TextInput(attrs={'class': 'validate '}),
 
         }
 
@@ -56,9 +58,9 @@ class StudentAddForm(forms.ModelForm):
         fields = ["student_name","reg_no","image"]
 
         widgets = {
-            "student_name":forms.Select(attrs={'class':'form-control'}),
-            "reg_no":forms.TextInput(attrs={'class':'form-control','placeholder':'Assign reg_no ...'}),
-            "image": forms.FileInput(attrs={'class': 'form-control'}),
+            "student_name":forms.Select(attrs={'class':'validate'}),
+            "reg_no":forms.TextInput(attrs={'class':'validate'}),
+            "image": forms.FileInput(attrs={'class': 'btn admin-upload-btn'}),
         }
 
     # def clean_image(self):
@@ -73,9 +75,46 @@ class StudentAddForm(forms.ModelForm):
 
         # return img
 
+class ExamSessionUpdateForm(forms.ModelForm):
+
+    class Meta:
+        model = ExamSession
+        fields = "__all__"
 
 
 
+
+
+
+class UserUpdateForm(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = ['first_name', 'last_name', 'username', 'email','phone_no','id_no','department']
+        widgets = {
+            'first_name': forms.TextInput(attrs={'class': 'validate'}),
+            'last_name': forms.TextInput(attrs={'class': 'validate'}),
+            'username': forms.TextInput(attrs={'class': 'validate'}),
+            'email':forms.TextInput(attrs={'class': 'validate'}),
+            'phone_no': forms.TextInput(attrs={'class': 'validate'}),
+            'id_no': forms.TextInput(attrs={'class': 'validate'}),
+            'department': forms.Select(attrs={'class': 'validate'}),
+
+        }
+
+        def clean_first_name(self):
+            first_name = self.cleaned_data['first_name']
+            if first_name.isalpha() == False:
+                raise forms.ValidationError("Name cant have Numbers")
+            else:
+                return first_name
+
+        def clean_second_name(self):
+            second_name = self.cleaned_data['second_name']
+
+            if second_name.isalpha() == False:
+                raise ValidationError('Name cant have numbers')
+            else:
+                return second_name
 
 
 
@@ -89,11 +128,11 @@ class UserForm(forms.ModelForm):
         widgets = {
             'first_name': forms.TextInput(attrs={'class': 'form-control pt-0 mt-0','placeholder': 'First Name'}),
             'last_name': forms.TextInput(attrs={'class': 'form-control pt-0 mt-0','placeholder': 'Second Name'}),
-            'username': forms.TextInput(attrs={'class': 'form-control pt-0 mt-0','placeholder': 'Index Number'}),
+            'username': forms.TextInput(attrs={'class': 'form-control pt-0 mt-0','placeholder': 'Registration Number'}),
             'email':forms.TextInput(attrs={'class': 'form-control pt-0 mt-0','placeholder': 'email'}),
             'phone_no': forms.TextInput(attrs={'class': 'form-control pt-0 mt-0', 'placeholder': 'Phone no'}),
             'id_no': forms.TextInput(attrs={'class': 'form-control pt-0 mt-0', 'placeholder': 'ID No...'}),
-            'department': forms.Select(attrs={'class': 'form-control pt-0 mt-0', 'placeholder': 'email'}),
+            'department': forms.Select(attrs={'class': 'form-control pt-0 mt-0', 'placeholder': 'Choose Course'}),
 
         }
     def clean_first_name(self):
@@ -121,13 +160,13 @@ class UserForm(forms.ModelForm):
         return cleaned_data
 
 class LoginForm(forms.ModelForm):
-    password = forms.CharField(widget=forms.PasswordInput(attrs={'class': 'form-control'}))
+    password = forms.CharField(widget=forms.PasswordInput(attrs={'class': 'validate'}))
 
     class Meta:
         model = User
         fields = ['username', 'password']
         widgets = {
-            'username': forms.TextInput(attrs={'class': 'form-control'}),
+            'username': forms.TextInput(attrs={'class': 'validate'}),
         }
 
 class RecognizerForm(forms.ModelForm):
