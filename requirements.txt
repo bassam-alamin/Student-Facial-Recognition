@@ -154,7 +154,7 @@ tornado==6.0.3
 tqdm==4.45.0
 traitlets==4.3.3
 treelib==1.6.1
-urllib3==1.25.8
+urllib3==1.26.5
 utils==1.0.1
 uuid==1.30
 wcwidth==0.1.8
