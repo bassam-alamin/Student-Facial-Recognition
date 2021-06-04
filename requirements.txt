@@ -24,7 +24,7 @@ cycler==0.10.0
 decorator==4.2.1
 deepface==0.0.18
 defusedxml==0.6.0
-Django==3.0.7
+Django==3.1.9
 django-camera-imagefield==0.2
 django-cors-headers==3.2.1
 django-userforeignkey==0.3.0
