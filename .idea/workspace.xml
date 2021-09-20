@@ -2,110 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f1ef2d00-5718-46d5-8618-71b0a2e94004" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Recognition/static/Recognition/css/bootstrap.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Recognition/static/Recognition/css/font-awesome.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Recognition/static/Recognition/css/materialize.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Recognition/static/Recognition/css/style-mob.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Recognition/static/Recognition/fonts/fontawesome-webfont5b62.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Recognition/static/Recognition/fonts/fontawesome-webfont5b62.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Recognition/static/Recognition/fonts/fontawesome-webfont5b62.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Recognition/static/Recognition/fonts/fontawesome-webfont5b62.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Recognition/static/Recognition/fonts/fontawesome-webfont5b62.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Recognition/static/Recognition/fonts/fontawesome-webfontd41d.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Recognition/static/Recognition/fonts/glyphicons-halflings-regular-2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Recognition/static/Recognition/fonts/glyphicons-halflings-regular-3.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Recognition/static/Recognition/fonts/glyphicons-halflings-regular-4.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Recognition/static/Recognition/fonts/glyphicons-halflings-regular-5.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Recognition/static/Recognition/fonts/glyphicons-halflings-regular.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Recognition/static/Recognition/fonts/glyphicons-halflings-regulard41d.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Recognition/static/Recognition/fonts/roboto/Roboto-Bold-2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Recognition/static/Recognition/fonts/roboto/Roboto-Bold.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Recognition/static/Recognition/fonts/roboto/Roboto-Light-2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Recognition/static/Recognition/fonts/roboto/Roboto-Light.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Recognition/static/Recognition/fonts/roboto/Roboto-Medium-2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Recognition/static/Recognition/fonts/roboto/Roboto-Medium.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Recognition/static/Recognition/fonts/roboto/Roboto-Regular-2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Recognition/static/Recognition/fonts/roboto/Roboto-Regular.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Recognition/static/Recognition/fonts/roboto/Roboto-Thin-2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Recognition/static/Recognition/fonts/roboto/Roboto-Thin.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Recognition/static/Recognition/images/1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Recognition/static/Recognition/images/2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Recognition/static/Recognition/images/3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Recognition/static/Recognition/images/cancel.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Recognition/static/Recognition/images/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Recognition/static/Recognition/images/search.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Recognition/static/Recognition/js/custom.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Recognition/static/Recognition/js/main.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Recognition/static/Recognition/js/materialize.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Recognition/templates/Recognition/admin_base.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Recognition/templates/Recognition/all_courses.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Recognition/templates/Recognition/all_lecturers.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Recognition/templates/Recognition/all_students.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Recognition/templates/Recognition/all_users.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Recognition/templates/Recognition/course_update.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Recognition/templates/Recognition/dashboard.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Recognition/templates/Recognition/exam_session_add.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Recognition/templates/Recognition/exam_session_update.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Recognition/templates/Recognition/exam_sessions.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Recognition/templates/Recognition/unit_update.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Recognition/templates/Recognition/user_update.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Students.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Students.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Recognition/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/Recognition/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Recognition/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/Recognition/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Recognition/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Recognition/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Recognition/static/Recognition/css/bootstrap/css/bootstrap-grid.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Recognition/static/Recognition/css/bootstrap/css/bootstrap-grid.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Recognition/static/Recognition/css/bootstrap/css/bootstrap-grid.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Recognition/static/Recognition/css/bootstrap/css/bootstrap-grid.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Recognition/static/Recognition/css/bootstrap/css/bootstrap-reboot.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Recognition/static/Recognition/css/bootstrap/css/bootstrap-reboot.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Recognition/static/Recognition/css/bootstrap/css/bootstrap-reboot.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Recognition/static/Recognition/css/bootstrap/css/bootstrap-reboot.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Recognition/static/Recognition/css/bootstrap/css/bootstrap.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Recognition/static/Recognition/css/bootstrap/css/bootstrap.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Recognition/static/Recognition/css/bootstrap/css/bootstrap.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Recognition/static/Recognition/css/bootstrap/css/bootstrap.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Recognition/static/Recognition/css/bootstrap/js/bootstrap.bundle.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Recognition/static/Recognition/css/bootstrap/js/bootstrap.bundle.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Recognition/static/Recognition/css/bootstrap/js/bootstrap.bundle.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Recognition/static/Recognition/css/bootstrap/js/bootstrap.bundle.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Recognition/static/Recognition/css/bootstrap/js/bootstrap.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Recognition/static/Recognition/css/bootstrap/js/bootstrap.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Recognition/static/Recognition/css/bootstrap/js/bootstrap.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Recognition/static/Recognition/css/bootstrap/js/bootstrap.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Recognition/static/Recognition/css/bootstrap/js/jquery-slim.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Recognition/static/Recognition/css/creative.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Recognition/static/Recognition/css/my.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Recognition/static/Recognition/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/Recognition/static/Recognition/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Recognition/static/Recognition/images/Ind-Counselling.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Recognition/static/Recognition/images/bg.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Recognition/static/Recognition/images/bg2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Recognition/static/Recognition/images/bg3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Recognition/static/Recognition/images/egerton2.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Recognition/static/Recognition/js/bootstrap.bundle.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Recognition/static/Recognition/js/bootstrap.bundle.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Recognition/static/Recognition/js/bootstrap.bundle.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Recognition/static/Recognition/js/bootstrap.bundle.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Recognition/static/Recognition/js/bootstrap.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Recognition/static/Recognition/js/bootstrap.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Recognition/static/Recognition/js/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/Recognition/static/Recognition/js/bootstrap.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Recognition/static/Recognition/js/bootstrap.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Recognition/static/Recognition/js/main.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Recognition/templates/Recognition/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/Recognition/templates/Recognition/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Recognition/templates/Recognition/department.html" beforeDir="false" afterPath="$PROJECT_DIR$/Recognition/templates/Recognition/department.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Recognition/templates/Recognition/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/Recognition/templates/Recognition/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Recognition/templates/Recognition/lecturers_add.html" beforeDir="false" afterPath="$PROJECT_DIR$/Recognition/templates/Recognition/lecturers_add.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Recognition/templates/Recognition/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/Recognition/templates/Recognition/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Recognition/templates/Recognition/login_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/Recognition/templates/Recognition/login_form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Recognition/templates/Recognition/student_add.html" beforeDir="false" afterPath="$PROJECT_DIR$/Recognition/templates/Recognition/student_add.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Recognition/templates/Recognition/unit_add.html" beforeDir="false" afterPath="$PROJECT_DIR$/Recognition/templates/Recognition/unit_add.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Recognition/templates/Recognition/units.html" beforeDir="false" afterPath="$PROJECT_DIR$/Recognition/templates/Recognition/units.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Recognition/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Recognition/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Recognition/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Recognition/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Students/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Students/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime.txt" beforeDir="false" afterPath="$PROJECT_DIR$/runtime.txt" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -139,21 +40,30 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="InvalidFacetManager">
+    <ignored-facets>
+      <facet id="Students/invalid/Django" />
+    </ignored-facets>
+  </component>
   <component name="ProjectId" id="1XUJYmjzV1fzaB9QUeNlzNvyQd5" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="sqlite" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../past projects/counselling" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="http.proxy" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -164,18 +74,6 @@
       <recent name="$PROJECT_DIR$/Recognition/static/Recognition" />
       <recent name="$PROJECT_DIR$/Recognition/static/Recognition/css" />
     </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="RunManager">
     <configuration name="Students" type="Python.DjangoServer" factoryName="Django server">
@@ -203,6 +101,7 @@
       <method v="2" />
     </configuration>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -340,12 +239,11 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
