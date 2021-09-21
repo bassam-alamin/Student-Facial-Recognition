@@ -3,7 +3,68 @@
   <component name="ChangeListManager">
     <list default="true" id="f1ef2d00-5718-46d5-8618-71b0a2e94004" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Students/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Students/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Recognition/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Recognition/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Recognition/static/Recognition/face-api.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Recognition/static/Recognition/images/How to Create a Password Reset View_files/1552069110-hotjar4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Recognition/static/Recognition/images/How to Create a Password Reset View_files/1559831166-Monday_tp_kanban.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Recognition/static/Recognition/images/How to Create a Password Reset View_files/1689711451348257" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Recognition/static/Recognition/images/How to Create a Password Reset View_files/B20652854.212994676" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Recognition/static/Recognition/images/How to Create a Password Reset View_files/CK7I4KJJ.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Recognition/static/Recognition/images/How to Create a Password Reset View_files/CKYIEKQM.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Recognition/static/Recognition/images/How to Create a Password Reset View_files/analytics.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Recognition/static/Recognition/images/How to Create a Password Reset View_files/attach.03c320b14aa9c071da30c904d0a0827f.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Recognition/static/Recognition/images/How to Create a Password Reset View_files/avatar92(1).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Recognition/static/Recognition/images/How to Create a Password Reset View_files/avatar92(2).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Recognition/static/Recognition/images/How to Create a Password Reset View_files/avatar92(3).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Recognition/static/Recognition/images/How to Create a Password Reset View_files/avatar92.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Recognition/static/Recognition/images/How to Create a Password Reset View_files/blockquote.69435f6faa8c7a193456c46bcb7fb1ed.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Recognition/static/Recognition/images/How to Create a Password Reset View_files/bold.cb366e6a49396fb0e47a01df277563c8.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Recognition/static/Recognition/images/How to Create a Password Reset View_files/carbon.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Recognition/static/Recognition/images/How to Create a Password Reset View_files/code.8f558a246aa4e9c41ef343f72f012f01.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Recognition/static/Recognition/images/How to Create a Password Reset View_files/common.bundle.5e2845671155c097129ebd8a2aeb308d.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Recognition/static/Recognition/images/How to Create a Password Reset View_files/config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Recognition/static/Recognition/images/How to Create a Password Reset View_files/count-data.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Recognition/static/Recognition/images/How to Create a Password Reset View_files/count.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Recognition/static/Recognition/images/How to Create a Password Reset View_files/css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Recognition/static/Recognition/images/How to Create a Password Reset View_files/discovery.539723090a04fba1b162858415868357.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Recognition/static/Recognition/images/How to Create a Password Reset View_files/discovery.bundle.05463248c2ace681de05d193251bc001.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Recognition/static/Recognition/images/How to Create a Password Reset View_files/embed.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Recognition/static/Recognition/images/How to Create a Password Reset View_files/fbevents.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Recognition/static/Recognition/images/How to Create a Password Reset View_files/featured-auth.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Recognition/static/Recognition/images/How to Create a Password Reset View_files/featured-do.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Recognition/static/Recognition/images/How to Create a Password Reset View_files/featured-jwt.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Recognition/static/Recognition/images/How to Create a Password Reset View_files/featured-post-image(1).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Recognition/static/Recognition/images/How to Create a Password Reset View_files/featured-post-image.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Recognition/static/Recognition/images/How to Create a Password Reset View_files/featured-reset.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Recognition/static/Recognition/images/How to Create a Password Reset View_files/featured-rest.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Recognition/static/Recognition/images/How to Create a Password Reset View_files/font-awesome.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Recognition/static/Recognition/images/How to Create a Password Reset View_files/gif-picker.df38180f2d048c25fe42a2b440ff863e.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Recognition/static/Recognition/images/How to Create a Password Reset View_files/inferredEvents.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Recognition/static/Recognition/images/How to Create a Password Reset View_files/italic.a6e1da4a89899ae5e87db9ded9f84d5b.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Recognition/static/Recognition/images/How to Create a Password Reset View_files/jquery.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Recognition/static/Recognition/images/How to Create a Password Reset View_files/link.5ef9a39f22ce49f926e304567b9d611b.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Recognition/static/Recognition/images/How to Create a Password Reset View_files/lounge.bundle.68e4c5280164c37aa37567ec6bf6629e.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Recognition/static/Recognition/images/How to Create a Password Reset View_files/lounge.c4b4280d8bfae00b65eebd2cedbb22b0.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Recognition/static/Recognition/images/How to Create a Password Reset View_files/lounge.load.5c281b90be9cbae86fbebcbaed6c8c9b.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Recognition/static/Recognition/images/How to Create a Password Reset View_files/main.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Recognition/static/Recognition/images/How to Create a Password Reset View_files/monetization.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Recognition/static/Recognition/images/How to Create a Password Reset View_files/noavatar92.7b2fde640943965cc88df0cdee365907.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Recognition/static/Recognition/images/How to Create a Password Reset View_files/noavatar92.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Recognition/static/Recognition/images/How to Create a Password Reset View_files/onejs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Recognition/static/Recognition/images/How to Create a Password Reset View_files/page-views.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Recognition/static/Recognition/images/How to Create a Password Reset View_files/picture.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Recognition/static/Recognition/images/How to Create a Password Reset View_files/reset_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Recognition/static/Recognition/images/How to Create a Password Reset View_files/reset_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Recognition/static/Recognition/images/How to Create a Password Reset View_files/reset_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Recognition/static/Recognition/images/How to Create a Password Reset View_files/reset_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Recognition/static/Recognition/images/How to Create a Password Reset View_files/reset_5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Recognition/static/Recognition/images/How to Create a Password Reset View_files/saved_resource(1).html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Recognition/static/Recognition/images/How to Create a Password Reset View_files/saved_resource.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Recognition/static/Recognition/images/How to Create a Password Reset View_files/site.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Recognition/static/Recognition/images/How to Create a Password Reset View_files/spoiler.eff5de8f72591c5ceeb4fa26a117c6d1.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Recognition/static/Recognition/images/How to Create a Password Reset View_files/strikethrough.ced68e63961c6bc0e072ce907906b252.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Recognition/static/Recognition/images/How to Create a Password Reset View_files/underline.59f82f5f5bbed90fd72132ef98662fe3.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Recognition/static/Recognition/script.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +115,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Topline-Insurance" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />

@@ -5,9 +5,6 @@ from django.contrib.auth.models import (
     AbstractUser
 )
 
-import cv2
-from PIL import Image
-from django.core.files.uploadedfile import InMemoryUploadedFile
 
 from django.conf import settings
 from django.db.models.signals import post_save
