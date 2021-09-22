@@ -27,7 +27,7 @@ click-repl==0.1.6
 cmake==3.16.3
 cognitive-face==1.5.0
 colorama==0.4.3
-cryptography==2.9.2
+cryptography==3.3.2
 cursor==1.2.0
 cycler==0.10.0
 decorator==5.0.9
