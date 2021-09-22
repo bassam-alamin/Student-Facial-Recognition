@@ -32,7 +32,7 @@ cursor==1.2.0
 cycler==0.10.0
 decorator==5.0.9
 defusedxml==0.7.1
-Django==3.1.7
+Django==3.1.13
 django-camera-imagefield==0.2
 django-cors-headers==3.7.0
 django-rest-framework==0.1.0
