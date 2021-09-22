@@ -11,16 +11,8 @@ from django.views.generic import View, CreateView, ListView, DetailView, UpdateV
 from .forms import *
 import numpy as np
 import cv2
-import face_recognition
 import dlib
-import math
-import matplotlib.pyplot as plt
-from skimage import exposure
-from imutils.face_utils import FaceAligner
-from imutils.face_utils import rect_to_bb
-import imutils
-import tkinter
-import matplotlib
+
 
 # Create your views here.
 # =======================================================Functions ====================================
