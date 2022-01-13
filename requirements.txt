@@ -114,7 +114,7 @@ passlib==1.7.2
 pbr==5.4.5
 pexpect==4.8.0
 pickleshare==0.7.5
-Pillow==8.1.2
+Pillow==9.0.0
 plumbum==1.6.9
 pp-ez==0.2.0
 pprintpp==0.4.0
